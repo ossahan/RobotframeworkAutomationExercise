@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.0.1 (Python 3.11.0 on win32)" generated="20230315 22:30:30.687" rpa="false" schemaversion="3">
+<suite id="s1" name="AutomationExercise25" source="C:\development\robot-scripts\Automation\TestCases\Resource\Keywords\AutomationExercise25.robot">
+<test id="s1-t1" name="Test Case 25" line="10">
+<kw name="Verify Scroll Up using 'Arrow' button and Scroll Down functionality">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230315 22:30:30.900" level="INFO">Opening browser 'edge' to base url 'https://automationexercise.com/'.</msg>
+<status status="PASS" starttime="20230315 22:30:30.900" endtime="20230315 22:30:35.767"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230315 22:30:35.767" endtime="20230315 22:30:35.887"/>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<arg>5</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" starttime="20230315 22:30:35.887" endtime="20230315 22:30:35.887"/>
+</kw>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<var>${homeColor}</var>
+<arg>${AutExerHome}</arg>
+<arg>style</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<msg timestamp="20230315 22:30:35.889" level="FAIL">Variable '${AutExerHome}' not found.</msg>
+<status status="FAIL" starttime="20230315 22:30:35.888" endtime="20230315 22:30:35.889"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${homeColor}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20230315 22:30:35.889" endtime="20230315 22:30:35.889"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${homeColor}</arg>
+<arg>orange</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="NOT RUN" starttime="20230315 22:30:35.889" endtime="20230315 22:30:35.890"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.scrollTo(0, document.body.scrollHeight)</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="NOT RUN" starttime="20230315 22:30:35.890" endtime="20230315 22:30:35.890"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${AutExerSubsciptionText}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="NOT RUN" starttime="20230315 22:30:35.890" endtime="20230315 22:30:35.890"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<arg>${AutExerBelowArrow}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="NOT RUN" starttime="20230315 22:30:35.890" endtime="20230315 22:30:35.890"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${AutExerBelowArrow}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20230315 22:30:35.890" endtime="20230315 22:30:35.890"/>
+</kw>
+<kw name="Get WebElements" library="SeleniumLibrary">
+<var>${LIST}</var>
+<arg>${AutExerFullFledged}</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<status status="NOT RUN" starttime="20230315 22:30:35.890" endtime="20230315 22:30:35.890"/>
+</kw>
+<for flavor="IN">
+<var>${Aut}</var>
+<value>@{LIST}</value>
+<iter>
+<var name="${Aut}"/>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${Aut}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20230315 22:30:35.891" endtime="20230315 22:30:35.891"/>
+</kw>
+<status status="NOT RUN" starttime="20230315 22:30:35.891" endtime="20230315 22:30:35.891"/>
+</iter>
+<status status="NOT RUN" starttime="20230315 22:30:35.891" endtime="20230315 22:30:35.891"/>
+</for>
+<status status="FAIL" starttime="20230315 22:30:30.899" endtime="20230315 22:30:35.891"/>
+</kw>
+<status status="FAIL" starttime="20230315 22:30:30.899" endtime="20230315 22:30:35.892">Variable '${AutExerHome}' not found.</status>
+</test>
+<status status="FAIL" starttime="20230315 22:30:30.687" endtime="20230315 22:30:35.893"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="AutomationExercise25">AutomationExercise25</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20230315 22:30:30.897" level="ERROR">Error in file 'C:\development\robot-scripts\Automation\TestCases\Resource\Keywords\AutomationExercise25.robot' on line 3: Variable file 'Resource\Locators\AutomationExercise.py' does not exist.</msg>
+</errors>
+</robot>

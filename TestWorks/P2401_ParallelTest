@@ -1,0 +1,30 @@
+# Kural 1
+# tum klasordeki testleri calistirmak istedigimizde robot + dosya pathi yaziyoruz.
+# ornek  robot C:\development\robot-scripts\Automation\TestCases
+# veya TestCases/ seklindeki komutla bir klasorun icindeki tum testleri calistirabiliyoruz.
+
+
+# Kural 2
+# isminin baslangici ayni olan testleri calistirmak icin klasorun pathi+ benzesen baslangic harfleri+ *. robot yaziyoruz.
+# Ornek robot TestCases/P23*.robot yazdigimizda Test case klasorundeki P23 ile baslayan tum testler calisir.
+
+# Kural 3
+# Klasoru gosterip icinde uzantisi robot olan tum testleri secmek icin klasor yolu+*.robot yaziyoruz.
+# Ornek  robot TestCases/*.robot
+
+# paralel test icin indirelecek libray: pip install robotframework-pabot
+# paralel test komutu ornek: pabot --processes 2 TestCases/*.robot : TestCases klasorundeki her bir testi ayni anda 2 defa calistirir.
+# paralel test komutu ornek: pabot --processes 3 TestCases/19*.robot : TestCases klasorundeki 19 ile baslayan testleri ayni anda  3 defa calistirir.
+# paralel test komutu ornek: pabot --processes 4 TestCases/ : TestCases klasorundeki her bir testi ayni anda 4 defa calistirir.
+
+
+# Araya --outputdir Results diye bir arguman ekleyince raporu Results diye yeni bir klasor olusturup oraya kaydedecektir
+# Ornek pabot --processes 2 --outputdir Results TestCases/*.robot 
+# Not:: Klasor icin Results ismi vermek zorunda degiliz. ostedigimiz gibi isimlendirme yapabiliriz.
+
+
+#testleri run.bat dosyasindan calistirma: projemizin icinde herhangi bir yere run.bat dosyasi olusturuyoruz
+# ilk satira cd yazarak baslayip testleri yurutmek istedigimiz klasorun yolunu veriyoruz.
+#ornek: C:\development\robot-scripts\Automation\TestCases
+#ikinci satira ise ornegin pabot --processes 2 --outputdir Results C:\development\robot-scripts\Automation\TestCases\p19*.robot seklinde komutumuzu yaziyoruz.
+# sonra run.bat dosyasina sag tiklayip run cmd sript yazisina tiklayinca CMD acilip yolunu gosterdigimiz testler baslamis oluyor.
