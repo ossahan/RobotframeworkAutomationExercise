@@ -1,6 +1,6 @@
 *** Settings ***
 Library  SeleniumLibrary
-Variables  ../PageObjects/Locators.py
+Variables  C:\development\robot-scripts\UI_RobotLessons\PageObjects\Locators.py
 
 *** Keywords ***
 Open My Browser

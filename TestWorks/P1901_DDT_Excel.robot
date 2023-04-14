@@ -1,22 +1,21 @@
 *** Settings ***
 Library             SeleniumLibrary
-Resource            ../Resource/Keywords/P1802_LoginResources.robot
-Library             DataDriver    ../TestData/LoginData.xlsx
 
-Suite Setup         Open my browser
-Suite Teardown      Close Browsers
-Test Template       Invalid login
+*** Variables ***
+${allProductsTitle}  Automation Exercise
+${url}  https://automationexercise.com/
+${expectedHomeTextColor}  orange
+
 
 
 *** Test Cases ***
-Login Test With Excel using    ${username}    ${password}
+TC01
+  Open Browser    ${url}  gc
+  Maximize Browser Window
 
 
-*** Keywords ***
-Invalid login
-    [Arguments]    ${username}    ${password}
-    Input username    ${username}
-    Input pass    ${password}
-    Click login button
-    Error message should be visible
+
+
+
+
 
