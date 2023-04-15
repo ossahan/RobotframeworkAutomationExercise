@@ -22,58 +22,142 @@
 22. Verify 'ACCOUNT DELETED!' and click 'Continue' button
 *** Settings ***
 Library   SeleniumLibrary
-Library    XML
 Library    Collections
 Library    FakerLibrary
-Variables    ..//Resource/Locators/AutomationExercise.py
+Library    OperatingSystem
+Library    String
+Variables    ..//PageObjects/AutomationExercise.py
 
 *** Variables ***
 ${url}   https://automationexercise.com/
-${browser}   edge
+${browser}   gc
 
 
 *** Test Cases ***
 Test Case 24: Download Invoice after purchase order
     Homepage should be visible
     After adding some products Cart Page should be visible
+    Verify Account created
+    New
 
 *** Keywords ***
 Homepage should be visible
   Open Browser    ${url}   ${browser}
   Maximize Browser Window
-  Set Selenium Speed    2
+
   ${homeColor}  SeleniumLibrary.Get Element Attribute    ${AutExerHome}    style
-  Log To Console    ${homeColor}
-  Should Contain    ${homeColor}   orange
+    Should Contain    ${homeColor}   orange
+
 
 After adding some products Cart Page should be visible
   ${addToCartElements}  Get WebElements    ${addToCards}
   ${CartElementsLength}   Get Length    ${addToCartElements}
   ${ClickableCartElements}  Create List
+  Set Selenium Speed    1
+
   FOR    ${indexNo}    IN RANGE    0   ${CartElementsLength}    2
-  ${eachProduct}  Get From List   ${addToCartElements}     ${indexNo}
-  Append To List    ${ClickableCartElements}   ${c}
+  ${eachProductLocator}  Get From List   ${addToCartElements}     ${indexNo}
+  Append To List    ${ClickableCartElements}   ${eachProductLocator}
 #   ${d}   Get Text     ${c}
 #   Log To Console     ${d}
      
        
   END
   Log To Console    ${CartElementsLength}
+  ${g}  Get Length    ${ClickableCartElements} 
 
-
-  FOR    ${counter}    IN RANGE    0    3    1
-  ${e}  Random Number  1  74
-       ${d}  Get From List    ${ClickableCartElements}    ${e}
-        Click Element    ${d}
+  ${os}  Create List
+  FOR    ${counter}    IN RANGE    0    1    1
+  ${randomNumber}  Random Int  1  33
+       ${randomProduct}  Get From List    ${ClickableCartElements}    ${randomNumber}
+        Click Element    ${randomProduct}
         Click Element    ${continueShopping}
+        Append To List    ${os}  ${randomNumber}
 
   END
+  Set Selenium Speed    0
 
 #  ${d}  Get From List    ${ClickableCartElements}    15
 #  Click Element    ${d}
 
   Click Element    ${goToCart}
   SeleniumLibrary.Element Text Should Be    ${ShoppingCart}    Shopping Cart
+  Log To Console    ${os}
+
+
+Verify Account created
+  Click Element    ${ProceedToCheckout}
+  Click Element    ${RegisterLoginOnCheckoutPopup}
+  #Click Element    ${RegisterLogin}
+  ${aa}  First Name Female
+  ${ab}  Last Name
+  ${b}  Email
+  Input Text    name    ${aa}
+  Input Text    ${SignupEmailBox}    ${b}
+  Click Button    Signup
+  Click Element    ${idGender}
+  ${c}  Password
+  Input Text    password    ${c}
+  Select From List By Index    days  10
+  Select From List By Index    months  1
+  Select From List By Value    years  1980
+
+  Input Text    first_name    ${aa}
+  Input Text    last_name    ${ab}
+  ${street}  Street Address
+  Input Text    address1    ${street}
+  Select From List By Index   country  4
+  Input Text    state    Gaziantep
+  Input Text    city    Körkun
+  Input Text    zipcode    27000
+  Input Text    mobile_number   +905418585525
+#  Press Key    mobile_number    ENTER
+#  Scroll Element Into View    ${CreateAccountButton}
+  Execute Javascript     window.scrollTo(0,document.body.scrollHeight)
+
+   Click Button    ${CreateAccountButton}
+   Set Selenium Speed    3
+
+   Element Text Should Be    ${AccountCreatedText}   ACCOUNT CREATED!
+
+  
+New
+    Click Element   ${ContinueButton}
+    Select Frame    id=card
+    #Select Frame    ad_iframe
+    #Set Selenium Speed    100
+    #
+
+    #Select Frame    aswift_1
+
+    Wait Until Element Is Visible   ${AdvertismentScreen}
+
+    #Select Frame    aswift_1_host
+    
+
+
+     Click Element    ${AdvertismentScreen}
+
+     Unselect Frame
+
+
+
+
+    ${ExpectedLoggedInText}  Set Variable  Logged in as
+    Log To Console  ${ExpectedLoggedInText}
+
+    Element Should Contain    ${loggedInAsUsername}     ${ExpectedLoggedInText}
+
+    Click Element    ${viewCart}
+
+  
+  
+
+
+
+
+
+
 
   
 

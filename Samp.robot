@@ -12,6 +12,10 @@ ${resultLocator}    //*[@id="result-stats"]
 
 
 *** Test Cases ***
+Aa
+  Dene
+
+*** Keywords ***
 TC1
     Open Browser   ${url}    edge
     Maximize Browser Window
@@ -31,4 +35,10 @@ Test
     Click Button    Tümünü kabul et
     Input Text      name=q    Robot Framework
     Press Keys     name=q   ENTER
+
+Dene
+     ${aa}  Set Variable   Osman
+     ${ExpectedLoggedInText}  Set Variable  Logged in as
+     ${ExpectedLoggedInText}     ${ExpectedLoggedInText}   ${aa}
+    Log To Console    ${ExpectedLoggedInText}
     

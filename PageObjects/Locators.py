@@ -14,5 +14,6 @@ emailReg= "name:Email"
 passwordReg= "name:Password"
 confirmPasswordReg= "name:ConfirmPassword"
 registerButton="xpath://input[@id='register-button']"
+SignupTitleRadioBoxForMrs="(//*[@name='title'])[2]"
 
 

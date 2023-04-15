@@ -10,7 +10,7 @@
 Library   SeleniumLibrary
 Library    XML
 Library    Collections
-Variables    ..//Resource/Locators/AutomationExercise.py
+Variables    ..//PageObjects/AutomationExercise.py
 
 *** Variables ***
 ${url}   https://automationexercise.com/
