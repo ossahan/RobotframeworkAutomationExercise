@@ -1,38 +1,1115 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.0.1 (Python 3.11.0 on win32)" generated="20230415 02:06:25.088" rpa="false" schemaversion="3">
-<suite id="s1" name="Samp" source="C:\development\robot-scripts\UI_RobotLessons\Samp.robot">
-<test id="s1-t1" name="Aa" line="15">
-<kw name="Dene">
-<kw name="Set Variable" library="BuiltIn">
+<robot generator="Robot 6.0.1 (Python 3.11.0 on win32)" generated="20230415 17:18:33.036" rpa="false" schemaversion="3">
+<suite id="s1" name="AutomationExercise24bis" source="C:\development\robot-scripts\UI_RobotLessons\TestWorks\AutomationExercise24bis.robot">
+<test id="s1-t1" name="Test Case 24: Download Invoice after purchase order" line="37">
+<kw name="Homepage should be visible">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230415 17:18:33.745" level="INFO">Opening browser 'gc' to base url 'https://automationexercise.com/'.</msg>
+<status status="PASS" starttime="20230415 17:18:33.745" endtime="20230415 17:18:49.012"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230415 17:18:49.013" endtime="20230415 17:18:49.201"/>
+</kw>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<var>${homeColor}</var>
+<arg>${AutExerHome}</arg>
+<arg>style</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<msg timestamp="20230415 17:18:49.230" level="INFO">${homeColor} = color: orange;</msg>
+<status status="PASS" starttime="20230415 17:18:49.202" endtime="20230415 17:18:49.230"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${homeColor}</arg>
+<arg>orange</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20230415 17:18:49.230" endtime="20230415 17:18:49.231"/>
+</kw>
+<status status="PASS" starttime="20230415 17:18:33.730" endtime="20230415 17:18:49.231"/>
+</kw>
+<kw name="After adding some products Cart Page should be visible">
+<kw name="Get WebElements" library="SeleniumLibrary">
+<var>${addToCartElements}</var>
+<arg>${addToCards}</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<msg timestamp="20230415 17:18:49.242" level="INFO">${addToCartElements} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="22e39995773ff39d2794231453b39df1", element="fe095dcf-ee53-4a40-9212-eb3480cba060")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (sessi...</msg>
+<status status="PASS" starttime="20230415 17:18:49.231" endtime="20230415 17:18:49.242"/>
+</kw>
+<kw name="Get Length" library="BuiltIn">
+<var>${CartElementsLength}</var>
+<arg>${addToCartElements}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<msg timestamp="20230415 17:18:49.242" level="INFO">Length is 74</msg>
+<msg timestamp="20230415 17:18:49.242" level="INFO">${CartElementsLength} = 74</msg>
+<status status="PASS" starttime="20230415 17:18:49.242" endtime="20230415 17:18:49.242"/>
+</kw>
+<kw name="Create List" library="BuiltIn">
+<var>${ClickableCartElements}</var>
+<doc>Returns a list containing given items.</doc>
+<msg timestamp="20230415 17:18:49.242" level="INFO">${ClickableCartElements} = []</msg>
+<status status="PASS" starttime="20230415 17:18:49.242" endtime="20230415 17:18:49.242"/>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<arg>1</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" starttime="20230415 17:18:49.242" endtime="20230415 17:18:49.242"/>
+</kw>
+<for flavor="IN RANGE">
+<var>${indexNo}</var>
+<value>0</value>
+<value>${CartElementsLength}</value>
+<value>2</value>
+<iter>
+<var name="${indexNo}">0</var>
+<kw name="Get From List" library="Collections">
+<var>${eachProductLocator}</var>
+<arg>${addToCartElements}</arg>
+<arg>${indexNo}</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<msg timestamp="20230415 17:18:49.242" level="INFO">${eachProductLocator} = &lt;selenium.webdriver.remote.webelement.WebElement (session="22e39995773ff39d2794231453b39df1", element="fe095dcf-ee53-4a40-9212-eb3480cba060")&gt;</msg>
+<status status="PASS" starttime="20230415 17:18:49.242" endtime="20230415 17:18:49.242"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${ClickableCartElements}</arg>
+<arg>${eachProductLocator}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20230415 17:18:49.242" endtime="20230415 17:18:49.242"/>
+</kw>
+<status status="PASS" starttime="20230415 17:18:49.242" endtime="20230415 17:18:49.242"/>
+</iter>
+<iter>
+<var name="${indexNo}">2</var>
+<kw name="Get From List" library="Collections">
+<var>${eachProductLocator}</var>
+<arg>${addToCartElements}</arg>
+<arg>${indexNo}</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<msg timestamp="20230415 17:18:49.247" level="INFO">${eachProductLocator} = &lt;selenium.webdriver.remote.webelement.WebElement (session="22e39995773ff39d2794231453b39df1", element="39a5fff0-2292-4e00-b235-5ce5e4b05915")&gt;</msg>
+<status status="PASS" starttime="20230415 17:18:49.242" endtime="20230415 17:18:49.247"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${ClickableCartElements}</arg>
+<arg>${eachProductLocator}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20230415 17:18:49.247" endtime="20230415 17:18:49.247"/>
+</kw>
+<status status="PASS" starttime="20230415 17:18:49.242" endtime="20230415 17:18:49.247"/>
+</iter>
+<iter>
+<var name="${indexNo}">4</var>
+<kw name="Get From List" library="Collections">
+<var>${eachProductLocator}</var>
+<arg>${addToCartElements}</arg>
+<arg>${indexNo}</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<msg timestamp="20230415 17:18:49.247" level="INFO">${eachProductLocator} = &lt;selenium.webdriver.remote.webelement.WebElement (session="22e39995773ff39d2794231453b39df1", element="7c52cd19-a587-495b-9417-cd2a88ddb010")&gt;</msg>
+<status status="PASS" starttime="20230415 17:18:49.247" endtime="20230415 17:18:49.247"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${ClickableCartElements}</arg>
+<arg>${eachProductLocator}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20230415 17:18:49.247" endtime="20230415 17:18:49.247"/>
+</kw>
+<status status="PASS" starttime="20230415 17:18:49.247" endtime="20230415 17:18:49.247"/>
+</iter>
+<iter>
+<var name="${indexNo}">6</var>
+<kw name="Get From List" library="Collections">
+<var>${eachProductLocator}</var>
+<arg>${addToCartElements}</arg>
+<arg>${indexNo}</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<msg timestamp="20230415 17:18:49.247" level="INFO">${eachProductLocator} = &lt;selenium.webdriver.remote.webelement.WebElement (session="22e39995773ff39d2794231453b39df1", element="51395ba2-f8db-4f05-a45b-5e7a3e1f0fe9")&gt;</msg>
+<status status="PASS" starttime="20230415 17:18:49.247" endtime="20230415 17:18:49.247"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${ClickableCartElements}</arg>
+<arg>${eachProductLocator}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20230415 17:18:49.247" endtime="20230415 17:18:49.247"/>
+</kw>
+<status status="PASS" starttime="20230415 17:18:49.247" endtime="20230415 17:18:49.247"/>
+</iter>
+<iter>
+<var name="${indexNo}">8</var>
+<kw name="Get From List" library="Collections">
+<var>${eachProductLocator}</var>
+<arg>${addToCartElements}</arg>
+<arg>${indexNo}</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<msg timestamp="20230415 17:18:49.247" level="INFO">${eachProductLocator} = &lt;selenium.webdriver.remote.webelement.WebElement (session="22e39995773ff39d2794231453b39df1", element="684108dc-c1be-4349-a7b2-f0e663339f5d")&gt;</msg>
+<status status="PASS" starttime="20230415 17:18:49.247" endtime="20230415 17:18:49.247"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${ClickableCartElements}</arg>
+<arg>${eachProductLocator}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20230415 17:18:49.247" endtime="20230415 17:18:49.247"/>
+</kw>
+<status status="PASS" starttime="20230415 17:18:49.247" endtime="20230415 17:18:49.247"/>
+</iter>
+<iter>
+<var name="${indexNo}">10</var>
+<kw name="Get From List" library="Collections">
+<var>${eachProductLocator}</var>
+<arg>${addToCartElements}</arg>
+<arg>${indexNo}</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<msg timestamp="20230415 17:18:49.252" level="INFO">${eachProductLocator} = &lt;selenium.webdriver.remote.webelement.WebElement (session="22e39995773ff39d2794231453b39df1", element="663a8310-f100-4432-8292-42d8857c0da5")&gt;</msg>
+<status status="PASS" starttime="20230415 17:18:49.252" endtime="20230415 17:18:49.252"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${ClickableCartElements}</arg>
+<arg>${eachProductLocator}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20230415 17:18:49.252" endtime="20230415 17:18:49.253"/>
+</kw>
+<status status="PASS" starttime="20230415 17:18:49.252" endtime="20230415 17:18:49.253"/>
+</iter>
+<iter>
+<var name="${indexNo}">12</var>
+<kw name="Get From List" library="Collections">
+<var>${eachProductLocator}</var>
+<arg>${addToCartElements}</arg>
+<arg>${indexNo}</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<msg timestamp="20230415 17:18:49.254" level="INFO">${eachProductLocator} = &lt;selenium.webdriver.remote.webelement.WebElement (session="22e39995773ff39d2794231453b39df1", element="e844e2d9-a2e9-48a9-ab26-fc855841fb58")&gt;</msg>
+<status status="PASS" starttime="20230415 17:18:49.253" endtime="20230415 17:18:49.254"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${ClickableCartElements}</arg>
+<arg>${eachProductLocator}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20230415 17:18:49.254" endtime="20230415 17:18:49.254"/>
+</kw>
+<status status="PASS" starttime="20230415 17:18:49.253" endtime="20230415 17:18:49.254"/>
+</iter>
+<iter>
+<var name="${indexNo}">14</var>
+<kw name="Get From List" library="Collections">
+<var>${eachProductLocator}</var>
+<arg>${addToCartElements}</arg>
+<arg>${indexNo}</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<msg timestamp="20230415 17:18:49.255" level="INFO">${eachProductLocator} = &lt;selenium.webdriver.remote.webelement.WebElement (session="22e39995773ff39d2794231453b39df1", element="1daa9152-1442-4a37-9115-8b66877ed26e")&gt;</msg>
+<status status="PASS" starttime="20230415 17:18:49.254" endtime="20230415 17:18:49.255"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${ClickableCartElements}</arg>
+<arg>${eachProductLocator}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20230415 17:18:49.255" endtime="20230415 17:18:49.255"/>
+</kw>
+<status status="PASS" starttime="20230415 17:18:49.254" endtime="20230415 17:18:49.255"/>
+</iter>
+<iter>
+<var name="${indexNo}">16</var>
+<kw name="Get From List" library="Collections">
+<var>${eachProductLocator}</var>
+<arg>${addToCartElements}</arg>
+<arg>${indexNo}</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<msg timestamp="20230415 17:18:49.256" level="INFO">${eachProductLocator} = &lt;selenium.webdriver.remote.webelement.WebElement (session="22e39995773ff39d2794231453b39df1", element="b7e5916a-dd37-4ffd-b344-f2939bc4e658")&gt;</msg>
+<status status="PASS" starttime="20230415 17:18:49.255" endtime="20230415 17:18:49.256"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${ClickableCartElements}</arg>
+<arg>${eachProductLocator}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20230415 17:18:49.256" endtime="20230415 17:18:49.256"/>
+</kw>
+<status status="PASS" starttime="20230415 17:18:49.255" endtime="20230415 17:18:49.256"/>
+</iter>
+<iter>
+<var name="${indexNo}">18</var>
+<kw name="Get From List" library="Collections">
+<var>${eachProductLocator}</var>
+<arg>${addToCartElements}</arg>
+<arg>${indexNo}</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<msg timestamp="20230415 17:18:49.257" level="INFO">${eachProductLocator} = &lt;selenium.webdriver.remote.webelement.WebElement (session="22e39995773ff39d2794231453b39df1", element="10aac1f9-ebf4-4fe1-a910-a71969472b99")&gt;</msg>
+<status status="PASS" starttime="20230415 17:18:49.257" endtime="20230415 17:18:49.257"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${ClickableCartElements}</arg>
+<arg>${eachProductLocator}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20230415 17:18:49.257" endtime="20230415 17:18:49.257"/>
+</kw>
+<status status="PASS" starttime="20230415 17:18:49.256" endtime="20230415 17:18:49.257"/>
+</iter>
+<iter>
+<var name="${indexNo}">20</var>
+<kw name="Get From List" library="Collections">
+<var>${eachProductLocator}</var>
+<arg>${addToCartElements}</arg>
+<arg>${indexNo}</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<msg timestamp="20230415 17:18:49.258" level="INFO">${eachProductLocator} = &lt;selenium.webdriver.remote.webelement.WebElement (session="22e39995773ff39d2794231453b39df1", element="e32f4d78-0ccc-4723-ac57-00d85190c47e")&gt;</msg>
+<status status="PASS" starttime="20230415 17:18:49.258" endtime="20230415 17:18:49.258"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${ClickableCartElements}</arg>
+<arg>${eachProductLocator}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20230415 17:18:49.258" endtime="20230415 17:18:49.258"/>
+</kw>
+<status status="PASS" starttime="20230415 17:18:49.257" endtime="20230415 17:18:49.258"/>
+</iter>
+<iter>
+<var name="${indexNo}">22</var>
+<kw name="Get From List" library="Collections">
+<var>${eachProductLocator}</var>
+<arg>${addToCartElements}</arg>
+<arg>${indexNo}</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<msg timestamp="20230415 17:18:49.259" level="INFO">${eachProductLocator} = &lt;selenium.webdriver.remote.webelement.WebElement (session="22e39995773ff39d2794231453b39df1", element="27c85715-b13c-44fc-8452-390a289fec40")&gt;</msg>
+<status status="PASS" starttime="20230415 17:18:49.259" endtime="20230415 17:18:49.259"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${ClickableCartElements}</arg>
+<arg>${eachProductLocator}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20230415 17:18:49.259" endtime="20230415 17:18:49.259"/>
+</kw>
+<status status="PASS" starttime="20230415 17:18:49.259" endtime="20230415 17:18:49.260"/>
+</iter>
+<iter>
+<var name="${indexNo}">24</var>
+<kw name="Get From List" library="Collections">
+<var>${eachProductLocator}</var>
+<arg>${addToCartElements}</arg>
+<arg>${indexNo}</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<msg timestamp="20230415 17:18:49.260" level="INFO">${eachProductLocator} = &lt;selenium.webdriver.remote.webelement.WebElement (session="22e39995773ff39d2794231453b39df1", element="da249710-a721-4189-bc96-dd22d2ae95bc")&gt;</msg>
+<status status="PASS" starttime="20230415 17:18:49.260" endtime="20230415 17:18:49.260"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${ClickableCartElements}</arg>
+<arg>${eachProductLocator}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20230415 17:18:49.260" endtime="20230415 17:18:49.261"/>
+</kw>
+<status status="PASS" starttime="20230415 17:18:49.260" endtime="20230415 17:18:49.261"/>
+</iter>
+<iter>
+<var name="${indexNo}">26</var>
+<kw name="Get From List" library="Collections">
+<var>${eachProductLocator}</var>
+<arg>${addToCartElements}</arg>
+<arg>${indexNo}</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<msg timestamp="20230415 17:18:49.261" level="INFO">${eachProductLocator} = &lt;selenium.webdriver.remote.webelement.WebElement (session="22e39995773ff39d2794231453b39df1", element="acf4eb55-c382-430b-9cb8-7cd49875c127")&gt;</msg>
+<status status="PASS" starttime="20230415 17:18:49.261" endtime="20230415 17:18:49.262"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${ClickableCartElements}</arg>
+<arg>${eachProductLocator}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20230415 17:18:49.262" endtime="20230415 17:18:49.262"/>
+</kw>
+<status status="PASS" starttime="20230415 17:18:49.261" endtime="20230415 17:18:49.262"/>
+</iter>
+<iter>
+<var name="${indexNo}">28</var>
+<kw name="Get From List" library="Collections">
+<var>${eachProductLocator}</var>
+<arg>${addToCartElements}</arg>
+<arg>${indexNo}</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<msg timestamp="20230415 17:18:49.263" level="INFO">${eachProductLocator} = &lt;selenium.webdriver.remote.webelement.WebElement (session="22e39995773ff39d2794231453b39df1", element="528c413f-2433-41af-8307-dba7c8aa891e")&gt;</msg>
+<status status="PASS" starttime="20230415 17:18:49.262" endtime="20230415 17:18:49.263"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${ClickableCartElements}</arg>
+<arg>${eachProductLocator}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20230415 17:18:49.263" endtime="20230415 17:18:49.263"/>
+</kw>
+<status status="PASS" starttime="20230415 17:18:49.262" endtime="20230415 17:18:49.263"/>
+</iter>
+<iter>
+<var name="${indexNo}">30</var>
+<kw name="Get From List" library="Collections">
+<var>${eachProductLocator}</var>
+<arg>${addToCartElements}</arg>
+<arg>${indexNo}</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<msg timestamp="20230415 17:18:49.264" level="INFO">${eachProductLocator} = &lt;selenium.webdriver.remote.webelement.WebElement (session="22e39995773ff39d2794231453b39df1", element="24796489-24bc-4d36-9100-4ff6ec428a5d")&gt;</msg>
+<status status="PASS" starttime="20230415 17:18:49.264" endtime="20230415 17:18:49.264"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${ClickableCartElements}</arg>
+<arg>${eachProductLocator}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20230415 17:18:49.264" endtime="20230415 17:18:49.264"/>
+</kw>
+<status status="PASS" starttime="20230415 17:18:49.263" endtime="20230415 17:18:49.264"/>
+</iter>
+<iter>
+<var name="${indexNo}">32</var>
+<kw name="Get From List" library="Collections">
+<var>${eachProductLocator}</var>
+<arg>${addToCartElements}</arg>
+<arg>${indexNo}</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<msg timestamp="20230415 17:18:49.265" level="INFO">${eachProductLocator} = &lt;selenium.webdriver.remote.webelement.WebElement (session="22e39995773ff39d2794231453b39df1", element="054c0f6e-3995-425b-ae7a-80fa84387afe")&gt;</msg>
+<status status="PASS" starttime="20230415 17:18:49.265" endtime="20230415 17:18:49.265"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${ClickableCartElements}</arg>
+<arg>${eachProductLocator}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20230415 17:18:49.265" endtime="20230415 17:18:49.266"/>
+</kw>
+<status status="PASS" starttime="20230415 17:18:49.265" endtime="20230415 17:18:49.266"/>
+</iter>
+<iter>
+<var name="${indexNo}">34</var>
+<kw name="Get From List" library="Collections">
+<var>${eachProductLocator}</var>
+<arg>${addToCartElements}</arg>
+<arg>${indexNo}</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<msg timestamp="20230415 17:18:49.266" level="INFO">${eachProductLocator} = &lt;selenium.webdriver.remote.webelement.WebElement (session="22e39995773ff39d2794231453b39df1", element="ba4ad69e-8e94-4f53-b0db-16c9408d24aa")&gt;</msg>
+<status status="PASS" starttime="20230415 17:18:49.266" endtime="20230415 17:18:49.266"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${ClickableCartElements}</arg>
+<arg>${eachProductLocator}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20230415 17:18:49.267" endtime="20230415 17:18:49.267"/>
+</kw>
+<status status="PASS" starttime="20230415 17:18:49.266" endtime="20230415 17:18:49.267"/>
+</iter>
+<iter>
+<var name="${indexNo}">36</var>
+<kw name="Get From List" library="Collections">
+<var>${eachProductLocator}</var>
+<arg>${addToCartElements}</arg>
+<arg>${indexNo}</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<msg timestamp="20230415 17:18:49.267" level="INFO">${eachProductLocator} = &lt;selenium.webdriver.remote.webelement.WebElement (session="22e39995773ff39d2794231453b39df1", element="9cb3cc9d-4414-4dc0-93dc-03e2f1d63cd3")&gt;</msg>
+<status status="PASS" starttime="20230415 17:18:49.267" endtime="20230415 17:18:49.268"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${ClickableCartElements}</arg>
+<arg>${eachProductLocator}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20230415 17:18:49.268" endtime="20230415 17:18:49.268"/>
+</kw>
+<status status="PASS" starttime="20230415 17:18:49.267" endtime="20230415 17:18:49.268"/>
+</iter>
+<iter>
+<var name="${indexNo}">38</var>
+<kw name="Get From List" library="Collections">
+<var>${eachProductLocator}</var>
+<arg>${addToCartElements}</arg>
+<arg>${indexNo}</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<msg timestamp="20230415 17:18:49.269" level="INFO">${eachProductLocator} = &lt;selenium.webdriver.remote.webelement.WebElement (session="22e39995773ff39d2794231453b39df1", element="55b03a5a-82da-4f80-97d8-834f8dc9866f")&gt;</msg>
+<status status="PASS" starttime="20230415 17:18:49.268" endtime="20230415 17:18:49.269"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${ClickableCartElements}</arg>
+<arg>${eachProductLocator}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20230415 17:18:49.269" endtime="20230415 17:18:49.269"/>
+</kw>
+<status status="PASS" starttime="20230415 17:18:49.268" endtime="20230415 17:18:49.269"/>
+</iter>
+<iter>
+<var name="${indexNo}">40</var>
+<kw name="Get From List" library="Collections">
+<var>${eachProductLocator}</var>
+<arg>${addToCartElements}</arg>
+<arg>${indexNo}</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<msg timestamp="20230415 17:18:49.270" level="INFO">${eachProductLocator} = &lt;selenium.webdriver.remote.webelement.WebElement (session="22e39995773ff39d2794231453b39df1", element="1d616f7e-49c0-44af-afb7-92b6551732f8")&gt;</msg>
+<status status="PASS" starttime="20230415 17:18:49.270" endtime="20230415 17:18:49.270"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${ClickableCartElements}</arg>
+<arg>${eachProductLocator}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20230415 17:18:49.270" endtime="20230415 17:18:49.270"/>
+</kw>
+<status status="PASS" starttime="20230415 17:18:49.270" endtime="20230415 17:18:49.271"/>
+</iter>
+<iter>
+<var name="${indexNo}">42</var>
+<kw name="Get From List" library="Collections">
+<var>${eachProductLocator}</var>
+<arg>${addToCartElements}</arg>
+<arg>${indexNo}</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<msg timestamp="20230415 17:18:49.271" level="INFO">${eachProductLocator} = &lt;selenium.webdriver.remote.webelement.WebElement (session="22e39995773ff39d2794231453b39df1", element="2694f4a3-46d3-4d6c-ba94-a48d71d91c75")&gt;</msg>
+<status status="PASS" starttime="20230415 17:18:49.271" endtime="20230415 17:18:49.271"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${ClickableCartElements}</arg>
+<arg>${eachProductLocator}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20230415 17:18:49.271" endtime="20230415 17:18:49.272"/>
+</kw>
+<status status="PASS" starttime="20230415 17:18:49.271" endtime="20230415 17:18:49.272"/>
+</iter>
+<iter>
+<var name="${indexNo}">44</var>
+<kw name="Get From List" library="Collections">
+<var>${eachProductLocator}</var>
+<arg>${addToCartElements}</arg>
+<arg>${indexNo}</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<msg timestamp="20230415 17:18:49.272" level="INFO">${eachProductLocator} = &lt;selenium.webdriver.remote.webelement.WebElement (session="22e39995773ff39d2794231453b39df1", element="89b5f4bf-425b-46ea-9bda-bd6a21efcc40")&gt;</msg>
+<status status="PASS" starttime="20230415 17:18:49.272" endtime="20230415 17:18:49.272"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${ClickableCartElements}</arg>
+<arg>${eachProductLocator}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20230415 17:18:49.273" endtime="20230415 17:18:49.273"/>
+</kw>
+<status status="PASS" starttime="20230415 17:18:49.272" endtime="20230415 17:18:49.273"/>
+</iter>
+<iter>
+<var name="${indexNo}">46</var>
+<kw name="Get From List" library="Collections">
+<var>${eachProductLocator}</var>
+<arg>${addToCartElements}</arg>
+<arg>${indexNo}</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<msg timestamp="20230415 17:18:49.273" level="INFO">${eachProductLocator} = &lt;selenium.webdriver.remote.webelement.WebElement (session="22e39995773ff39d2794231453b39df1", element="a7ad214b-5d0a-48f7-9737-2ab7f303e089")&gt;</msg>
+<status status="PASS" starttime="20230415 17:18:49.273" endtime="20230415 17:18:49.274"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${ClickableCartElements}</arg>
+<arg>${eachProductLocator}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20230415 17:18:49.274" endtime="20230415 17:18:49.274"/>
+</kw>
+<status status="PASS" starttime="20230415 17:18:49.273" endtime="20230415 17:18:49.274"/>
+</iter>
+<iter>
+<var name="${indexNo}">48</var>
+<kw name="Get From List" library="Collections">
+<var>${eachProductLocator}</var>
+<arg>${addToCartElements}</arg>
+<arg>${indexNo}</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<msg timestamp="20230415 17:18:49.275" level="INFO">${eachProductLocator} = &lt;selenium.webdriver.remote.webelement.WebElement (session="22e39995773ff39d2794231453b39df1", element="81f21a3d-36c6-4ab3-b24d-f109aecaf27a")&gt;</msg>
+<status status="PASS" starttime="20230415 17:18:49.274" endtime="20230415 17:18:49.275"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${ClickableCartElements}</arg>
+<arg>${eachProductLocator}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20230415 17:18:49.275" endtime="20230415 17:18:49.275"/>
+</kw>
+<status status="PASS" starttime="20230415 17:18:49.274" endtime="20230415 17:18:49.275"/>
+</iter>
+<iter>
+<var name="${indexNo}">50</var>
+<kw name="Get From List" library="Collections">
+<var>${eachProductLocator}</var>
+<arg>${addToCartElements}</arg>
+<arg>${indexNo}</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<msg timestamp="20230415 17:18:49.276" level="INFO">${eachProductLocator} = &lt;selenium.webdriver.remote.webelement.WebElement (session="22e39995773ff39d2794231453b39df1", element="f712f603-1fe5-4333-afea-7db46a430eb8")&gt;</msg>
+<status status="PASS" starttime="20230415 17:18:49.276" endtime="20230415 17:18:49.276"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${ClickableCartElements}</arg>
+<arg>${eachProductLocator}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20230415 17:18:49.276" endtime="20230415 17:18:49.277"/>
+</kw>
+<status status="PASS" starttime="20230415 17:18:49.275" endtime="20230415 17:18:49.277"/>
+</iter>
+<iter>
+<var name="${indexNo}">52</var>
+<kw name="Get From List" library="Collections">
+<var>${eachProductLocator}</var>
+<arg>${addToCartElements}</arg>
+<arg>${indexNo}</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<msg timestamp="20230415 17:18:49.277" level="INFO">${eachProductLocator} = &lt;selenium.webdriver.remote.webelement.WebElement (session="22e39995773ff39d2794231453b39df1", element="95d9c465-ecc7-4fb4-8d06-b54fa0468297")&gt;</msg>
+<status status="PASS" starttime="20230415 17:18:49.277" endtime="20230415 17:18:49.277"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${ClickableCartElements}</arg>
+<arg>${eachProductLocator}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20230415 17:18:49.278" endtime="20230415 17:18:49.278"/>
+</kw>
+<status status="PASS" starttime="20230415 17:18:49.277" endtime="20230415 17:18:49.278"/>
+</iter>
+<iter>
+<var name="${indexNo}">54</var>
+<kw name="Get From List" library="Collections">
+<var>${eachProductLocator}</var>
+<arg>${addToCartElements}</arg>
+<arg>${indexNo}</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<msg timestamp="20230415 17:18:49.279" level="INFO">${eachProductLocator} = &lt;selenium.webdriver.remote.webelement.WebElement (session="22e39995773ff39d2794231453b39df1", element="2550bbc0-89f0-4573-90b6-02cb0c085261")&gt;</msg>
+<status status="PASS" starttime="20230415 17:18:49.278" endtime="20230415 17:18:49.279"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${ClickableCartElements}</arg>
+<arg>${eachProductLocator}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20230415 17:18:49.279" endtime="20230415 17:18:49.279"/>
+</kw>
+<status status="PASS" starttime="20230415 17:18:49.278" endtime="20230415 17:18:49.279"/>
+</iter>
+<iter>
+<var name="${indexNo}">56</var>
+<kw name="Get From List" library="Collections">
+<var>${eachProductLocator}</var>
+<arg>${addToCartElements}</arg>
+<arg>${indexNo}</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<msg timestamp="20230415 17:18:49.280" level="INFO">${eachProductLocator} = &lt;selenium.webdriver.remote.webelement.WebElement (session="22e39995773ff39d2794231453b39df1", element="12a5dd29-c828-4b05-89ef-ec242c9a757f")&gt;</msg>
+<status status="PASS" starttime="20230415 17:18:49.280" endtime="20230415 17:18:49.280"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${ClickableCartElements}</arg>
+<arg>${eachProductLocator}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20230415 17:18:49.280" endtime="20230415 17:18:49.280"/>
+</kw>
+<status status="PASS" starttime="20230415 17:18:49.279" endtime="20230415 17:18:49.280"/>
+</iter>
+<iter>
+<var name="${indexNo}">58</var>
+<kw name="Get From List" library="Collections">
+<var>${eachProductLocator}</var>
+<arg>${addToCartElements}</arg>
+<arg>${indexNo}</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<msg timestamp="20230415 17:18:49.281" level="INFO">${eachProductLocator} = &lt;selenium.webdriver.remote.webelement.WebElement (session="22e39995773ff39d2794231453b39df1", element="bff3ad5b-4739-4430-a2d7-b71d27be20fa")&gt;</msg>
+<status status="PASS" starttime="20230415 17:18:49.281" endtime="20230415 17:18:49.281"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${ClickableCartElements}</arg>
+<arg>${eachProductLocator}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20230415 17:18:49.282" endtime="20230415 17:18:49.282"/>
+</kw>
+<status status="PASS" starttime="20230415 17:18:49.281" endtime="20230415 17:18:49.282"/>
+</iter>
+<iter>
+<var name="${indexNo}">60</var>
+<kw name="Get From List" library="Collections">
+<var>${eachProductLocator}</var>
+<arg>${addToCartElements}</arg>
+<arg>${indexNo}</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<msg timestamp="20230415 17:18:49.283" level="INFO">${eachProductLocator} = &lt;selenium.webdriver.remote.webelement.WebElement (session="22e39995773ff39d2794231453b39df1", element="9d4fc214-a131-4870-8685-eea69c22a0a4")&gt;</msg>
+<status status="PASS" starttime="20230415 17:18:49.282" endtime="20230415 17:18:49.283"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${ClickableCartElements}</arg>
+<arg>${eachProductLocator}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20230415 17:18:49.283" endtime="20230415 17:18:49.283"/>
+</kw>
+<status status="PASS" starttime="20230415 17:18:49.282" endtime="20230415 17:18:49.283"/>
+</iter>
+<iter>
+<var name="${indexNo}">62</var>
+<kw name="Get From List" library="Collections">
+<var>${eachProductLocator}</var>
+<arg>${addToCartElements}</arg>
+<arg>${indexNo}</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<msg timestamp="20230415 17:18:49.284" level="INFO">${eachProductLocator} = &lt;selenium.webdriver.remote.webelement.WebElement (session="22e39995773ff39d2794231453b39df1", element="0dfa9277-b1a0-477a-b543-905d1d402fdb")&gt;</msg>
+<status status="PASS" starttime="20230415 17:18:49.284" endtime="20230415 17:18:49.284"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${ClickableCartElements}</arg>
+<arg>${eachProductLocator}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20230415 17:18:49.284" endtime="20230415 17:18:49.284"/>
+</kw>
+<status status="PASS" starttime="20230415 17:18:49.283" endtime="20230415 17:18:49.284"/>
+</iter>
+<iter>
+<var name="${indexNo}">64</var>
+<kw name="Get From List" library="Collections">
+<var>${eachProductLocator}</var>
+<arg>${addToCartElements}</arg>
+<arg>${indexNo}</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<msg timestamp="20230415 17:18:49.285" level="INFO">${eachProductLocator} = &lt;selenium.webdriver.remote.webelement.WebElement (session="22e39995773ff39d2794231453b39df1", element="030f090d-ed32-4008-996f-71f853b50ec6")&gt;</msg>
+<status status="PASS" starttime="20230415 17:18:49.285" endtime="20230415 17:18:49.285"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${ClickableCartElements}</arg>
+<arg>${eachProductLocator}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20230415 17:18:49.285" endtime="20230415 17:18:49.286"/>
+</kw>
+<status status="PASS" starttime="20230415 17:18:49.285" endtime="20230415 17:18:49.286"/>
+</iter>
+<iter>
+<var name="${indexNo}">66</var>
+<kw name="Get From List" library="Collections">
+<var>${eachProductLocator}</var>
+<arg>${addToCartElements}</arg>
+<arg>${indexNo}</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<msg timestamp="20230415 17:18:49.287" level="INFO">${eachProductLocator} = &lt;selenium.webdriver.remote.webelement.WebElement (session="22e39995773ff39d2794231453b39df1", element="c2ce5859-9138-485a-978f-7b8f7771e5e8")&gt;</msg>
+<status status="PASS" starttime="20230415 17:18:49.286" endtime="20230415 17:18:49.287"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${ClickableCartElements}</arg>
+<arg>${eachProductLocator}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20230415 17:18:49.287" endtime="20230415 17:18:49.288"/>
+</kw>
+<status status="PASS" starttime="20230415 17:18:49.286" endtime="20230415 17:18:49.288"/>
+</iter>
+<iter>
+<var name="${indexNo}">68</var>
+<kw name="Get From List" library="Collections">
+<var>${eachProductLocator}</var>
+<arg>${addToCartElements}</arg>
+<arg>${indexNo}</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<msg timestamp="20230415 17:18:49.289" level="INFO">${eachProductLocator} = &lt;selenium.webdriver.remote.webelement.WebElement (session="22e39995773ff39d2794231453b39df1", element="46ee6fee-4a40-4313-ba68-1a0f3aaa8af3")&gt;</msg>
+<status status="PASS" starttime="20230415 17:18:49.289" endtime="20230415 17:18:49.289"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${ClickableCartElements}</arg>
+<arg>${eachProductLocator}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20230415 17:18:49.289" endtime="20230415 17:18:49.290"/>
+</kw>
+<status status="PASS" starttime="20230415 17:18:49.288" endtime="20230415 17:18:49.290"/>
+</iter>
+<iter>
+<var name="${indexNo}">70</var>
+<kw name="Get From List" library="Collections">
+<var>${eachProductLocator}</var>
+<arg>${addToCartElements}</arg>
+<arg>${indexNo}</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<msg timestamp="20230415 17:18:49.291" level="INFO">${eachProductLocator} = &lt;selenium.webdriver.remote.webelement.WebElement (session="22e39995773ff39d2794231453b39df1", element="02fad402-1a85-48d4-938e-04d2dfabc814")&gt;</msg>
+<status status="PASS" starttime="20230415 17:18:49.290" endtime="20230415 17:18:49.292"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${ClickableCartElements}</arg>
+<arg>${eachProductLocator}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20230415 17:18:49.292" endtime="20230415 17:18:49.292"/>
+</kw>
+<status status="PASS" starttime="20230415 17:18:49.290" endtime="20230415 17:18:49.292"/>
+</iter>
+<iter>
+<var name="${indexNo}">72</var>
+<kw name="Get From List" library="Collections">
+<var>${eachProductLocator}</var>
+<arg>${addToCartElements}</arg>
+<arg>${indexNo}</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<msg timestamp="20230415 17:18:49.293" level="INFO">${eachProductLocator} = &lt;selenium.webdriver.remote.webelement.WebElement (session="22e39995773ff39d2794231453b39df1", element="e8a5567e-6fab-4964-b3db-693b0ec42bc4")&gt;</msg>
+<status status="PASS" starttime="20230415 17:18:49.292" endtime="20230415 17:18:49.293"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${ClickableCartElements}</arg>
+<arg>${eachProductLocator}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20230415 17:18:49.293" endtime="20230415 17:18:49.293"/>
+</kw>
+<status status="PASS" starttime="20230415 17:18:49.292" endtime="20230415 17:18:49.293"/>
+</iter>
+<status status="PASS" starttime="20230415 17:18:49.242" endtime="20230415 17:18:49.293"/>
+</for>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${CartElementsLength}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230415 17:18:49.293" endtime="20230415 17:18:49.294"/>
+</kw>
+<kw name="Get Length" library="BuiltIn">
+<var>${g}</var>
+<arg>${ClickableCartElements}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<msg timestamp="20230415 17:18:49.294" level="INFO">Length is 37</msg>
+<msg timestamp="20230415 17:18:49.294" level="INFO">${g} = 37</msg>
+<status status="PASS" starttime="20230415 17:18:49.294" endtime="20230415 17:18:49.294"/>
+</kw>
+<kw name="Create List" library="BuiltIn">
+<var>${os}</var>
+<doc>Returns a list containing given items.</doc>
+<msg timestamp="20230415 17:18:49.295" level="INFO">${os} = []</msg>
+<status status="PASS" starttime="20230415 17:18:49.295" endtime="20230415 17:18:49.295"/>
+</kw>
+<for flavor="IN RANGE">
+<var>${counter}</var>
+<value>0</value>
+<value>1</value>
+<value>1</value>
+<iter>
+<var name="${counter}">0</var>
+<kw name="Random Int" library="FakerLibrary">
+<var>${randomNumber}</var>
+<arg>1</arg>
+<arg>33</arg>
+<doc>Generate a random integer between two integers ``min`` and ``max`` inclusive
+while observing the provided ``step`` value.</doc>
+<msg timestamp="20230415 17:18:49.296" level="INFO">${randomNumber} = 2</msg>
+<status status="PASS" starttime="20230415 17:18:49.295" endtime="20230415 17:18:49.296"/>
+</kw>
+<kw name="Get From List" library="Collections">
+<var>${randomProduct}</var>
+<arg>${ClickableCartElements}</arg>
+<arg>${randomNumber}</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<msg timestamp="20230415 17:18:49.296" level="INFO">${randomProduct} = &lt;selenium.webdriver.remote.webelement.WebElement (session="22e39995773ff39d2794231453b39df1", element="7c52cd19-a587-495b-9417-cd2a88ddb010")&gt;</msg>
+<status status="PASS" starttime="20230415 17:18:49.296" endtime="20230415 17:18:49.297"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${randomProduct}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230415 17:18:49.297" level="INFO">Clicking element '&lt;selenium.webdriver.remote.webelement.WebElement (session="22e39995773ff39d2794231453b39df1", element="7c52cd19-a587-495b-9417-cd2a88ddb010")&gt;'.</msg>
+<status status="PASS" starttime="20230415 17:18:49.297" endtime="20230415 17:18:50.331"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${continueShopping}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230415 17:18:50.332" level="INFO">Clicking element '//button[@class='btn btn-success close-modal btn-block']'.</msg>
+<status status="PASS" starttime="20230415 17:18:50.331" endtime="20230415 17:18:52.382"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${os}</arg>
+<arg>${randomNumber}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20230415 17:18:52.382" endtime="20230415 17:18:52.382"/>
+</kw>
+<status status="PASS" starttime="20230415 17:18:49.295" endtime="20230415 17:18:52.382"/>
+</iter>
+<status status="PASS" starttime="20230415 17:18:49.295" endtime="20230415 17:18:52.382"/>
+</for>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<arg>0</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" starttime="20230415 17:18:52.382" endtime="20230415 17:18:52.382"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${goToCart}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230415 17:18:52.382" level="INFO">Clicking element '(//a[@href='/view_cart'])[1]'.</msg>
+<status status="PASS" starttime="20230415 17:18:52.382" endtime="20230415 17:18:54.318"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>${ShoppingCart}</arg>
+<arg>Shopping Cart</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20230415 17:18:54.319" level="INFO">Verifying element '//li[@class='active']' contains exact text 'Shopping Cart'.</msg>
+<status status="PASS" starttime="20230415 17:18:54.319" endtime="20230415 17:18:54.344"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${os}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230415 17:18:54.345" endtime="20230415 17:18:54.345"/>
+</kw>
+<status status="PASS" starttime="20230415 17:18:49.231" endtime="20230415 17:18:54.345"/>
+</kw>
+<kw name="Verify Account created">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${ProceedToCheckout}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230415 17:18:54.346" level="INFO">Clicking element '//a[@class='btn btn-default check_out']'.</msg>
+<status status="PASS" starttime="20230415 17:18:54.346" endtime="20230415 17:18:54.397"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${RegisterLoginOnCheckoutPopup}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230415 17:18:54.398" level="INFO">Clicking element '(//a[@href='/login'])[2]'.</msg>
+<status status="PASS" starttime="20230415 17:18:54.397" endtime="20230415 17:18:55.831"/>
+</kw>
+<kw name="First Name Female" library="FakerLibrary">
 <var>${aa}</var>
-<arg>Osman</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20230415 02:06:25.832" level="INFO">${aa} = Osman</msg>
-<status status="PASS" starttime="20230415 02:06:25.832" endtime="20230415 02:06:25.834"/>
+<msg timestamp="20230415 17:18:55.833" level="INFO">${aa} = Mary</msg>
+<status status="PASS" starttime="20230415 17:18:55.832" endtime="20230415 17:18:55.834"/>
+</kw>
+<kw name="Last Name" library="FakerLibrary">
+<var>${ab}</var>
+<msg timestamp="20230415 17:18:55.836" level="INFO">${ab} = Tran</msg>
+<status status="PASS" starttime="20230415 17:18:55.834" endtime="20230415 17:18:55.836"/>
+</kw>
+<kw name="Email" library="FakerLibrary">
+<var>${b}</var>
+<msg timestamp="20230415 17:18:55.838" level="INFO">${b} = rpatel@example.org</msg>
+<status status="PASS" starttime="20230415 17:18:55.837" endtime="20230415 17:18:55.839"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>name</arg>
+<arg>${aa}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230415 17:18:55.841" level="INFO">Typing text 'Mary' into text field 'name'.</msg>
+<status status="PASS" starttime="20230415 17:18:55.839" endtime="20230415 17:18:56.112"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${SignupEmailBox}</arg>
+<arg>${b}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230415 17:18:56.113" level="INFO">Typing text 'rpatel@example.org' into text field '//*[@data-qa='signup-email']'.</msg>
+<status status="PASS" starttime="20230415 17:18:56.112" endtime="20230415 17:18:56.190"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>Signup</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20230415 17:18:56.190" level="INFO">Clicking button 'Signup'.</msg>
+<status status="PASS" starttime="20230415 17:18:56.190" endtime="20230415 17:18:57.744"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${idGender}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230415 17:18:57.746" level="INFO">Clicking element 'id:uniform-id_gender2'.</msg>
+<status status="PASS" starttime="20230415 17:18:57.745" endtime="20230415 17:18:57.973"/>
+</kw>
+<kw name="Password" library="FakerLibrary">
+<var>${c}</var>
+<doc>Generate a random password of the specified ``length``.</doc>
+<msg timestamp="20230415 17:18:57.974" level="INFO">${c} = !r6SbZ)vR_</msg>
+<status status="PASS" starttime="20230415 17:18:57.974" endtime="20230415 17:18:57.974"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>password</arg>
+<arg>${c}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230415 17:18:57.975" level="INFO">Typing text '!r6SbZ)vR_' into text field 'password'.</msg>
+<status status="PASS" starttime="20230415 17:18:57.974" endtime="20230415 17:18:58.057"/>
+</kw>
+<kw name="Select From List By Index" library="SeleniumLibrary">
+<arg>days</arg>
+<arg>10</arg>
+<doc>Selects options from selection list ``locator`` by ``indexes``.</doc>
+<msg timestamp="20230415 17:18:58.059" level="INFO">Selecting options from selection list 'days' by index 10.</msg>
+<status status="PASS" starttime="20230415 17:18:58.058" endtime="20230415 17:18:58.203"/>
+</kw>
+<kw name="Select From List By Index" library="SeleniumLibrary">
+<arg>months</arg>
+<arg>1</arg>
+<doc>Selects options from selection list ``locator`` by ``indexes``.</doc>
+<msg timestamp="20230415 17:18:58.204" level="INFO">Selecting options from selection list 'months' by index 1.</msg>
+<status status="PASS" starttime="20230415 17:18:58.203" endtime="20230415 17:18:58.520"/>
+</kw>
+<kw name="Select From List By Value" library="SeleniumLibrary">
+<arg>years</arg>
+<arg>1980</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<msg timestamp="20230415 17:18:58.521" level="INFO">Selecting options from selection list 'years' by value 1980.</msg>
+<status status="PASS" starttime="20230415 17:18:58.520" endtime="20230415 17:18:58.590"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>first_name</arg>
+<arg>${aa}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230415 17:18:58.591" level="INFO">Typing text 'Mary' into text field 'first_name'.</msg>
+<status status="PASS" starttime="20230415 17:18:58.591" endtime="20230415 17:18:58.662"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>last_name</arg>
+<arg>${ab}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230415 17:18:58.663" level="INFO">Typing text 'Tran' into text field 'last_name'.</msg>
+<status status="PASS" starttime="20230415 17:18:58.662" endtime="20230415 17:18:58.739"/>
+</kw>
+<kw name="Street Address" library="FakerLibrary">
+<var>${street}</var>
+<doc>:example: '791 Crist Parks'</doc>
+<msg timestamp="20230415 17:18:58.740" level="INFO">${street} = 033 Willie Turnpike</msg>
+<status status="PASS" starttime="20230415 17:18:58.739" endtime="20230415 17:18:58.740"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>address1</arg>
+<arg>${street}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230415 17:18:58.741" level="INFO">Typing text '033 Willie Turnpike' into text field 'address1'.</msg>
+<status status="PASS" starttime="20230415 17:18:58.740" endtime="20230415 17:18:58.850"/>
+</kw>
+<kw name="Select From List By Index" library="SeleniumLibrary">
+<arg>country</arg>
+<arg>4</arg>
+<doc>Selects options from selection list ``locator`` by ``indexes``.</doc>
+<msg timestamp="20230415 17:18:58.852" level="INFO">Selecting options from selection list 'country' by index 4.</msg>
+<status status="PASS" starttime="20230415 17:18:58.851" endtime="20230415 17:18:58.956"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>state</arg>
+<arg>Gaziantep</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230415 17:18:58.957" level="INFO">Typing text 'Gaziantep' into text field 'state'.</msg>
+<status status="PASS" starttime="20230415 17:18:58.956" endtime="20230415 17:18:59.038"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>city</arg>
+<arg>Körkun</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230415 17:18:59.038" level="INFO">Typing text 'Körkun' into text field 'city'.</msg>
+<status status="PASS" starttime="20230415 17:18:59.038" endtime="20230415 17:18:59.113"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>zipcode</arg>
+<arg>27000</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230415 17:18:59.114" level="INFO">Typing text '27000' into text field 'zipcode'.</msg>
+<status status="PASS" starttime="20230415 17:18:59.114" endtime="20230415 17:18:59.236"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>mobile_number</arg>
+<arg>+905418585525</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230415 17:18:59.237" level="INFO">Typing text '+905418585525' into text field 'mobile_number'.</msg>
+<status status="PASS" starttime="20230415 17:18:59.237" endtime="20230415 17:18:59.330"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.scrollTo(0,document.body.scrollHeight)</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20230415 17:18:59.331" level="INFO">Executing JavaScript:
+window.scrollTo(0,document.body.scrollHeight)
+Without any arguments.</msg>
+<status status="PASS" starttime="20230415 17:18:59.330" endtime="20230415 17:18:59.335"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${CreateAccountButton}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20230415 17:18:59.336" level="INFO">Clicking button '(//button[@type='submit'])[1]'.</msg>
+<status status="PASS" starttime="20230415 17:18:59.335" endtime="20230415 17:19:02.929"/>
+</kw>
+<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
+<arg>5</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" starttime="20230415 17:19:02.929" endtime="20230415 17:19:02.930"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>${AccountCreatedText}</arg>
+<arg>ACCOUNT CREATED!</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20230415 17:19:02.931" level="INFO">Verifying element '//*[text()='Account Created!']' contains exact text 'ACCOUNT CREATED!'.</msg>
+<status status="PASS" starttime="20230415 17:19:02.930" endtime="20230415 17:19:02.951"/>
+</kw>
+<status status="PASS" starttime="20230415 17:18:54.346" endtime="20230415 17:19:02.951"/>
+</kw>
+<kw name="New">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${ContinueButton}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230415 17:19:02.952" level="INFO">Clicking element '//*[@data-qa='continue-button']'.</msg>
+<status status="PASS" starttime="20230415 17:19:02.952" endtime="20230415 17:19:03.003"/>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${iframe1Statement}</var>
+<arg>Element Should Be Visible</arg>
+<arg>${iframe1}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${iframe1}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20230415 17:19:08.338" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20230415 17:19:08.338" level="FAIL">Element with locator 'xpath=//*[@id='aswift_3']' not found.</msg>
+<status status="FAIL" starttime="20230415 17:19:03.004" endtime="20230415 17:19:08.338"/>
+</kw>
+<msg timestamp="20230415 17:19:08.338" level="INFO">${iframe1Statement} = False</msg>
+<status status="PASS" starttime="20230415 17:19:03.003" endtime="20230415 17:19:08.338"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${iframe1Statement}</arg>
+<arg>Select Frame</arg>
+<arg>${iframe1}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20230415 17:19:08.338" endtime="20230415 17:19:08.338"/>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${iframe2Statement}</var>
+<arg>Element Should Be Visible</arg>
+<arg>${iframe2}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${iframe2}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20230415 17:19:13.627" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-2.png"&gt;&lt;img src="selenium-screenshot-2.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20230415 17:19:13.628" level="FAIL">Element with locator 'xpath=//*[@id='aswift_5']' not found.</msg>
+<status status="FAIL" starttime="20230415 17:19:08.338" endtime="20230415 17:19:13.630"/>
+</kw>
+<msg timestamp="20230415 17:19:13.630" level="INFO">${iframe2Statement} = False</msg>
+<status status="PASS" starttime="20230415 17:19:08.338" endtime="20230415 17:19:13.630"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${iframe2Statement}</arg>
+<arg>Select Frame</arg>
+<arg>${iframe2}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20230415 17:19:13.630" endtime="20230415 17:19:13.630"/>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${iframe3Statement}</var>
+<arg>Element Should Be Visible</arg>
+<arg>${iframeAd}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${iframeAd}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20230415 17:19:18.988" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-3.png"&gt;&lt;img src="selenium-screenshot-3.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20230415 17:19:18.988" level="FAIL">Element with locator 'xpath=//*[@id='ad_iframe']' not found.</msg>
+<status status="FAIL" starttime="20230415 17:19:13.630" endtime="20230415 17:19:18.988"/>
+</kw>
+<msg timestamp="20230415 17:19:18.988" level="INFO">${iframe3Statement} = False</msg>
+<status status="PASS" starttime="20230415 17:19:13.630" endtime="20230415 17:19:18.988"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${iframe3Statement}</arg>
+<arg>Select Frame</arg>
+<arg>${iframeAd}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20230415 17:19:18.988" endtime="20230415 17:19:18.988"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${AdvertismentScreen}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230415 17:19:18.991" level="INFO">Clicking element '//*[@id='dismiss-button']'.</msg>
+<msg timestamp="20230415 17:19:24.323" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-4.png"&gt;&lt;img src="selenium-screenshot-4.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20230415 17:19:24.323" level="FAIL">Element with locator '//*[@id='dismiss-button']' not found.</msg>
+<status status="FAIL" starttime="20230415 17:19:18.988" endtime="20230415 17:19:24.323"/>
+</kw>
+<kw name="Unselect Frame" library="SeleniumLibrary">
+<doc>Sets the main frame as the current frame.</doc>
+<status status="NOT RUN" starttime="20230415 17:19:24.323" endtime="20230415 17:19:24.323"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
-<var>@{ExpectedLoggedInText}</var>
+<var>${ExpectedLoggedInText}</var>
 <arg>Logged in as</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20230415 02:06:25.835" level="FAIL">Cannot set variable '@{ExpectedLoggedInText}': Expected list-like value, got string.</msg>
-<status status="FAIL" starttime="20230415 02:06:25.834" endtime="20230415 02:06:25.835"/>
-</kw>
-<kw>
-<var>${ExpectedLoggedInText}</var>
-<var>${ExpectedLoggedInText}</var>
-<var>${aa}</var>
-<status status="NOT RUN" starttime="20230415 02:06:25.835" endtime="20230415 02:06:25.835"/>
+<status status="NOT RUN" starttime="20230415 17:19:24.323" endtime="20230415 17:19:24.323"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>${ExpectedLoggedInText}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="NOT RUN" starttime="20230415 02:06:25.835" endtime="20230415 02:06:25.835"/>
+<status status="NOT RUN" starttime="20230415 17:19:24.323" endtime="20230415 17:19:24.323"/>
 </kw>
-<status status="FAIL" starttime="20230415 02:06:25.832" endtime="20230415 02:06:25.836"/>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>${loggedInAsUsername}</arg>
+<arg>${ExpectedLoggedInText}</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<status status="NOT RUN" starttime="20230415 17:19:24.323" endtime="20230415 17:19:24.323"/>
 </kw>
-<status status="FAIL" starttime="20230415 02:06:25.831" endtime="20230415 02:06:25.836">Cannot set variable '@{ExpectedLoggedInText}': Expected list-like value, got string.</status>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${viewCart}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20230415 17:19:24.323" endtime="20230415 17:19:24.323"/>
+</kw>
+<status status="FAIL" starttime="20230415 17:19:02.951" endtime="20230415 17:19:24.323"/>
+</kw>
+<status status="FAIL" starttime="20230415 17:18:33.730" endtime="20230415 17:19:24.323">Element with locator '//*[@id='dismiss-button']' not found.</status>
 </test>
-<status status="FAIL" starttime="20230415 02:06:25.091" endtime="20230415 02:06:25.837"/>
+<status status="FAIL" starttime="20230415 17:18:33.036" endtime="20230415 17:19:24.323"/>
 </suite>
 <statistics>
 <total>
@@ -41,7 +1118,7 @@
 <tag>
 </tag>
 <suite>
-<stat pass="0" fail="1" skip="0" id="s1" name="Samp">Samp</stat>
+<stat pass="0" fail="1" skip="0" id="s1" name="AutomationExercise24bis">AutomationExercise24bis</stat>
 </suite>
 </statistics>
 <errors>

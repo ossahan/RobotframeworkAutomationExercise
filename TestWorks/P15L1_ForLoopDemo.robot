@@ -1,14 +1,42 @@
 *** Settings ***
 Library      SeleniumLibrary
+Library    Collections
 
 *** Test Cases ***
 ForLoop
+  ForLoop1
         ForLoop6WithExit
 *** Keywords ***
 ForLoop1
-      FOR        ${i}           IN RANGE      1    10
-      log to console  ${i}
+      ${LIST}  Create List
+     # ${counter}
+      FOR  ${i}   IN RANGE      1    10000     5
+
+      #FOR  ${counter}    IN RANGE  3   19
+
+               IF    ${i}%4==0 and ${i}%9 ==0
+
+               Append To List  ${LIST}     ${i}
+
+              END
+
+
+      #END
+
+
+
+
+
       END
+      Log To Console   ${LIST}'
+
+
+       FOR    ${element}    IN    @{LIST}
+       Remove From List    ${LIST}        ${element}
+
+      END
+
+       log to console  ${LIST}
 
 ForLoop2
         FOR        ${i}      IN  1    2    3    4  5    6    7    8

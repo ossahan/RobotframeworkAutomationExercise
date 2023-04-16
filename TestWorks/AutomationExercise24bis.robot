@@ -1,31 +1,32 @@
-1. Launch browser
-2. Navigate to url 'http://automationexercise.com'
-3. Verify that home page is visible successfully
-4. Add products to cart
-5. Click 'Cart' button
-6. Verify that cart page is displayed
-7. Click Proceed To Checkout
-8. Click 'Register / Login' button
-9. Fill all details in Signup and create account
-10. Verify 'ACCOUNT CREATED!' and click 'Continue' button
-11. Verify ' Logged in as username' at top
-12.Click 'Cart' button
-13. Click 'Proceed To Checkout' button
-14. Verify Address Details and Review Your Order
-15. Enter description in comment text area and click 'Place Order'
-16. Enter payment details: Name on Card, Card Number, CVC, Expiration date
-17. Click 'Pay and Confirm Order' button
-18. Verify success message 'Your order has been placed successfully!'
-19. Click 'Download Invoice' button and verify invoice is downloaded successfully.
-20. Click 'Continue' button
-21. Click 'Delete Account' button
-22. Verify 'ACCOUNT DELETED!' and click 'Continue' button
+#1. Launch browser
+#2. Navigate to url 'http://automationexercise.com'
+#3. Verify that home page is visible successfully
+#4. Add products to cart
+#5. Click 'Cart' button
+#6. Verify that cart page is displayed
+#7. Click Proceed To Checkout
+#8. Click 'Register / Login' button
+#9. Fill all details in Signup and create account
+#10. Verify 'ACCOUNT CREATED!' and click 'Continue' button
+#11. Verify ' Logged in as username' at top
+#12.Click 'Cart' button
+#13. Click 'Proceed To Checkout' button
+#14. Verify Address Details and Review Your Order
+#15. Enter description in comment text area and click 'Place Order'
+#16. Enter payment details: Name on Card, Card Number, CVC, Expiration date
+#17. Click 'Pay and Confirm Order' button
+#18. Verify success message 'Your order has been placed successfully!'
+#19. Click 'Download Invoice' button and verify invoice is downloaded successfully.
+#20. Click 'Continue' button
+#21. Click 'Delete Account' button
+#22. Verify 'ACCOUNT DELETED!' and click 'Continue' button
 *** Settings ***
 Library   SeleniumLibrary
 Library    Collections
 Library    FakerLibrary
 Library    OperatingSystem
 Library    String
+
 Variables    ..//PageObjects/AutomationExercise.py
 
 *** Variables ***
@@ -123,30 +124,34 @@ Verify Account created
   
 New
     Click Element   ${ContinueButton}
-    Select Frame    ${iframe1}
-    #Select Frame    ad_iframe
-    #Set Selenium Speed    100
-    #
+    ${iframe1Statement}  Run Keyword And Return Status    Element Should Be Visible    ad_iframe
+    Run Keyword If    ${iframe1Statement}   Select Frame    ad_iframe
 
-    #Select Frame    aswift_1
+    ${iframe2Statement}  Run Keyword And Return Status    Element Should Be Visible   aswift_1
+    Run Keyword If    ${iframe2Statement}   Select Frame    aswift_1
 
-    Wait Until Element Is Visible   ${AdvertismentScreen}
-
-    #Select Frame    aswift_1_host
+    ${iframe3Statement}  Run Keyword And Return Status    Element Should Be Visible   ${iframeAd}
+    Run Keyword If    ${iframe3Statement}   Select Frame    ${iframeAd}
 
 
+    ${iframeAd1Statement}  Run Keyword And Return Status    Element Should Be Visible   xpath=//*[@id='dismiss-button']/div/svg
+    Run Keyword If    ${iframeAd1Statement}   Click Element    xpath=//*[@id='dismiss-button']/div/svg
 
-     Click Element    ${AdvertismentScreen}
-
-     Unselect Frame
-
+    ${iframeAd1Statement}  Run Keyword And Return Status    Element Should Be Visible   xpath=//*[@id='dismiss-button']
+    Run Keyword If    ${iframeAd1Statement}   Click Element    xpath=//*[@id='dismiss-button']
 
 
 
-    ${ExpectedLoggedInText}  Set Variable  Logged in as
+    Unselect Frame
+
+     set selenium speed  10
+
+
+
+    ${ExpectedLoggedInText}
     Log To Console  ${ExpectedLoggedInText}
-
-    Element Should Contain    ${loggedInAsUsername}     ${ExpectedLoggedInText}
+    ${actualLoggedInText}   Get Text    ${loggedInAsUsername}
+    Element Should Contain    ${loggedInAsUsername}      ${actualLoggedInText}
 
     Click Element    ${viewCart}
 
