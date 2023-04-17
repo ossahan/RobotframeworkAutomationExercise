@@ -1,3 +1,4 @@
+*** Comments ***
 #1. Launch browser
 #2. Navigate to url 'http://automationexercise.com'
 #3. Verify that home page is visible successfully
@@ -20,18 +21,20 @@
 #20. Click 'Continue' button
 #21. Click 'Delete Account' button
 #22. Verify 'ACCOUNT DELETED!' and click 'Continue' button
-*** Settings ***
-Library   SeleniumLibrary
-Library    Collections
-Library    FakerLibrary
-Library    OperatingSystem
-Library    String
 
-Variables    ..//PageObjects/AutomationExercise.py
+
+*** Settings ***
+Library         SeleniumLibrary
+Library         Collections
+Library         FakerLibrary
+Library         OperatingSystem
+Library         String
+Variables       ..//PageObjects/AutomationExercise.py
+
 
 *** Variables ***
-${url}   https://automationexercise.com/
-${browser}   gc
+${url}          https://automationexercise.com/
+${browser}      gc
 
 
 *** Test Cases ***
@@ -41,129 +44,123 @@ Test Case 24: Download Invoice after purchase order
     Verify Account created
     New
 
+
 *** Keywords ***
 Homepage should be visible
-  Open Browser    ${url}   ${browser}
-  Maximize Browser Window
+    Open Browser    ${url}    ${browser}
+    Maximize Browser Window
 
-  ${homeColor}  SeleniumLibrary.Get Element Attribute    ${AutExerHome}    style
-    Should Contain    ${homeColor}   orange
-
+    ${homeColor}    SeleniumLibrary.Get Element Attribute    ${AutExerHome}    style
+    Should Contain    ${homeColor}    orange
 
 After adding some products Cart Page should be visible
-  ${addToCartElements}  Get WebElements    ${addToCards}
-  ${CartElementsLength}   Get Length    ${addToCartElements}
-  ${ClickableCartElements}  Create List
-  Set Selenium Speed    1
+    ${addToCartElements}    Get WebElements    ${addToCards}
+    ${CartElementsLength}    Get Length    ${addToCartElements}
+    ${ClickableCartElements}    Create List
+    Set Selenium Speed    1
 
-  FOR    ${indexNo}    IN RANGE    0   ${CartElementsLength}    2
-  ${eachProductLocator}  Get From List   ${addToCartElements}     ${indexNo}
-  Append To List    ${ClickableCartElements}   ${eachProductLocator}
-#   ${d}   Get Text     ${c}
-#   Log To Console     ${d}
-     
-       
-  END
-  Log To Console    ${CartElementsLength}
-  ${g}  Get Length    ${ClickableCartElements} 
+    FOR    ${indexNo}    IN RANGE    0    ${CartElementsLength}    2
+        ${eachProductLocator}    Get From List    ${addToCartElements}    ${indexNo}
+        Append To List    ${ClickableCartElements}    ${eachProductLocator}
+#    ${d}    Get Text    ${c}
+#    Log To Console    ${d}
+    END
+    Log To Console    ${CartElementsLength}
+    ${g}    Get Length    ${ClickableCartElements}
 
-  ${os}  Create List
-  FOR    ${counter}    IN RANGE    0    1    1
-  ${randomNumber}  Random Int  1  33
-       ${randomProduct}  Get From List    ${ClickableCartElements}    ${randomNumber}
+    ${os}    Create List
+    FOR    ${counter}    IN RANGE    0    1    1
+        ${randomNumber}    Random Int    1    33
+        ${randomProduct}    Get From List    ${ClickableCartElements}    ${randomNumber}
         Click Element    ${randomProduct}
         Click Element    ${continueShopping}
-        Append To List    ${os}  ${randomNumber}
+        Append To List    ${os}    ${randomNumber}
+    END
+    Set Selenium Speed    0
 
-  END
-  Set Selenium Speed    0
+#    ${d}    Get From List    ${ClickableCartElements}    15
+#    Click Element    ${d}
 
-#  ${d}  Get From List    ${ClickableCartElements}    15
-#  Click Element    ${d}
-
-  Click Element    ${goToCart}
-  SeleniumLibrary.Element Text Should Be    ${ShoppingCart}    Shopping Cart
-  Log To Console    ${os}
-
+    Click Element    ${goToCart}
+    SeleniumLibrary.Element Text Should Be    ${ShoppingCart}    Shopping Cart
+    Log To Console    ${os}
 
 Verify Account created
-  Click Element    ${ProceedToCheckout}
-  Click Element    ${RegisterLoginOnCheckoutPopup}
-  #Click Element    ${RegisterLogin}
-  ${aa}  First Name Female
-  ${ab}  Last Name
-  ${b}  Email
-  Input Text    name    ${aa}
-  Input Text    ${SignupEmailBox}    ${b}
-  Click Button    Signup
-  Click Element    ${idGender}
-  ${c}  Password
-  Input Text    password    ${c}
-  Select From List By Index    days  10
-  Select From List By Index    months  1
-  Select From List By Value    years  1980
+    Click Element    ${ProceedToCheckout}
+    Click Element    ${RegisterLoginOnCheckoutPopup}
+    #Click Element    ${RegisterLogin}
+    ${aa}    First Name Female
+    ${ab}    Last Name
+    ${b}    Email
+    Input Text    name    ${aa}
+    Input Text    ${SignupEmailBox}    ${b}
+    Click Button    Signup
+    Click Element    ${idGender}
+    ${c}    Password
+    Input Text    password    ${c}
+    Select From List By Index    days    10
+    Select From List By Index    months    1
+    Select From List By Value    years    1980
 
-  Input Text    first_name    ${aa}
-  Input Text    last_name    ${ab}
-  ${street}  Street Address
-  Input Text    address1    ${street}
-  Select From List By Index   country  4
-  Input Text    state    Gaziantep
-  Input Text    city    Körkun
-  Input Text    zipcode    27000
-  Input Text    mobile_number   +905418585525
-#  Press Key    mobile_number    ENTER
-#  Scroll Element Into View    ${CreateAccountButton}
-  Execute Javascript     window.scrollTo(0,document.body.scrollHeight)
+    Input Text    first_name    ${aa}
+    Input Text    last_name    ${ab}
+    ${street}    Street Address
+    Input Text    address1    ${street}
+    Select From List By Index    country    5
+    Input Text    state    Gaziantep
+    Input Text    city    Körkun
+    Input Text    zipcode    27000
+    Input Text    mobile_number    +905418585525
+    #Press Key    mobile_number    ENTER
+    Scroll Element Into View    ${CreateAccountButton}
+    #Execute Javascript    document.getElementsByTagName('button')[0].click
+    Execute Javascript    window.scrollTo(0, document.body.scrollHeight);
+    #Set Selenium Speed    100
+    #Wait Until Element Is Enabled    ${CreateAccountButton}
+    Click Button    ${CreateAccountButton}
 
-   Click Button    ${CreateAccountButton}
-   Set Selenium Implicit Wait    5
+    Wait Until Element Is Visible    ${AccountCreatedText}
+    ${expectedAccountCreatedText}    Set Variable    ACCOUNT CREATED!
+    ${ActualAccountCreatedText}    Get Text    ${AccountCreatedText}
+    ${ActualAccountCreatedText}    Convert To Upper Case    ${ActualAccountCreatedText}
+    Log To Console    ${ActualAccountCreatedText}
 
-   Element Text Should Be    ${AccountCreatedText}   ACCOUNT CREATED!
+    Element Should Contain    ${AccountCreatedText}    ${expectedAccountCreatedText}
 
-  
 New
-    Click Element   ${ContinueButton}
-    ${iframe1Statement}  Run Keyword And Return Status    Element Should Be Visible    ad_iframe
-    Run Keyword If    ${iframe1Statement}   Select Frame    ad_iframe
+    Click Element    ${ContinueButton}
+    ${iframe1Statement}    Run Keyword And Return Status    Element Should Be Visible    ad_iframe
+    IF    ${iframe1Statement}    Select Frame    ad_iframe
 
-    ${iframe2Statement}  Run Keyword And Return Status    Element Should Be Visible   aswift_1
-    Run Keyword If    ${iframe2Statement}   Select Frame    aswift_1
+    ${iframe2Statement}    Run Keyword And Return Status    Element Should Be Visible    aswift_1
+    IF    ${iframe2Statement}    Select Frame    aswift_1
 
-    ${iframe3Statement}  Run Keyword And Return Status    Element Should Be Visible   ${iframeAd}
-    Run Keyword If    ${iframe3Statement}   Select Frame    ${iframeAd}
+    ${iframe3Statement}    Run Keyword And Return Status    Element Should Be Visible    ${iframeAd}
+    IF    ${iframe3Statement}    Select Frame    ${iframeAd}
 
+    ${iframeAd1Statement}    Run Keyword And Return Status
+    ...    Element Should Be Visible
+    ...    xpath=//*[@id='dismiss-button']/div/svg
+    IF    ${iframeAd1Statement}
+        Click Element    xpath=//*[@id='dismiss-button']/div/svg
+    END
 
-    ${iframeAd1Statement}  Run Keyword And Return Status    Element Should Be Visible   xpath=//*[@id='dismiss-button']/div/svg
-    Run Keyword If    ${iframeAd1Statement}   Click Element    xpath=//*[@id='dismiss-button']/div/svg
-
-    ${iframeAd1Statement}  Run Keyword And Return Status    Element Should Be Visible   xpath=//*[@id='dismiss-button']
-    Run Keyword If    ${iframeAd1Statement}   Click Element    xpath=//*[@id='dismiss-button']
-
-
+    ${iframeAd1Statement}    Run Keyword And Return Status
+    ...    Element Should Be Visible
+    ...    xpath=//*[@id='dismiss-button']
+    IF    ${iframeAd1Statement}
+        Click Element    xpath=//*[@id='dismiss-button']
+    END
 
     Unselect Frame
 
-     set selenium speed  10
+    set selenium speed    1
+    ${ExpectedLoggedInText}    Catenate    Logged in as
 
-
-
-    ${ExpectedLoggedInText}
-    Log To Console  ${ExpectedLoggedInText}
-    ${actualLoggedInText}   Get Text    ${loggedInAsUsername}
-    Element Should Contain    ${loggedInAsUsername}      ${actualLoggedInText}
+    ${ExpectedLoggedInText}    Catenate    ${ExpectedLoggedInText}    ${aa}
+    #Log To Console    ${ExpectedLoggedInText}
+    ${actualLoggedInText}    Get Text    ${loggedInAsUsername}
+    Log To Console    ${actualLoggedInText}
+    Element Should Contain    ${loggedInAsUsername}    ${ExpectedLoggedInText}
 
     Click Element    ${viewCart}
-
-  
-  
-
-
-
-
-
-
-
-  
-
-
