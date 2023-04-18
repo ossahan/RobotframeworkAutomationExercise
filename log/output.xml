@@ -1,128 +1,105 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.0.1 (Python 3.11.0 on win32)" generated="20230418 07:58:41.320" rpa="false" schemaversion="3">
-<suite id="s1" name="Samp" source="C:\development\robot-scripts\UI_RobotLessons\TestWorks\Samp.robot">
-<test id="s1-t1" name="Aa" line="16">
-<kw name="TC1">
-<kw name="Open Browser" library="SeleniumLibrary">
-<arg>${url}</arg>
-<arg>ff</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20230418 07:58:42.042" level="INFO">Opening browser 'ff' to base url 'https://google.com'.</msg>
-<msg timestamp="20230418 07:58:42.057" level="INFO">Firefox driver log is always forced to to: C:\development\robot-scripts\UI_RobotLessons\log\geckodriver-1.log</msg>
-<status status="PASS" starttime="20230418 07:58:42.042" endtime="20230418 07:58:51.551"/>
-</kw>
-<kw name="Maximize Browser Window" library="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20230418 07:58:51.551" endtime="20230418 07:58:51.834"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>1</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20230418 07:58:52.839" level="INFO">Slept 1 second</msg>
-<status status="PASS" starttime="20230418 07:58:51.838" endtime="20230418 07:58:52.839"/>
-</kw>
-<kw name="Run Keyword And Return Status" library="BuiltIn">
-<var>${present}</var>
-<arg>Element Should Be Visible</arg>
-<arg>xpath://*[@id="L2AGLb"]/div</arg>
-<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
-<kw name="Element Should Be Visible" library="SeleniumLibrary">
-<arg>xpath://*[@id="L2AGLb"]/div</arg>
-<doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<msg timestamp="20230418 07:58:52.891" level="INFO">Element 'xpath://*[@id="L2AGLb"]/div' is displayed.</msg>
-<status status="PASS" starttime="20230418 07:58:52.839" endtime="20230418 07:58:52.891"/>
-</kw>
-<msg timestamp="20230418 07:58:52.891" level="INFO">${present} = True</msg>
-<status status="PASS" starttime="20230418 07:58:52.839" endtime="20230418 07:58:52.891"/>
-</kw>
-<kw name="Run Keyword If" library="BuiltIn">
-<arg>${present}</arg>
-<arg>Click Element</arg>
-<arg>xpath://*[@id="L2AGLb"]/div</arg>
-<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>xpath://*[@id="L2AGLb"]/div</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230418 07:58:52.895" level="INFO">Clicking element 'xpath://*[@id="L2AGLb"]/div'.</msg>
-<status status="PASS" starttime="20230418 07:58:52.891" endtime="20230418 07:58:53.121"/>
-</kw>
-<status status="PASS" starttime="20230418 07:58:52.891" endtime="20230418 07:58:53.121"/>
-</kw>
-<status status="PASS" starttime="20230418 07:58:42.042" endtime="20230418 07:58:53.121"/>
-</kw>
-<kw name="Test">
-<kw name="Open Browser" library="SeleniumLibrary">
-<arg>https://www.google.com.tr</arg>
-<arg>chrome</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20230418 07:58:53.121" level="INFO">Opening browser 'chrome' to base url 'https://www.google.com.tr'.</msg>
-<status status="PASS" starttime="20230418 07:58:53.121" endtime="20230418 07:58:55.211"/>
-</kw>
-<kw name="Click Button" library="SeleniumLibrary">
-<arg>Tümünü kabul et</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20230418 07:58:55.211" level="INFO">Clicking button 'Tümünü kabul et'.</msg>
-<status status="PASS" starttime="20230418 07:58:55.211" endtime="20230418 07:58:55.264"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>name=q</arg>
-<arg>Robot Framework</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20230418 07:58:55.264" level="INFO">Typing text 'Robot Framework' into text field 'name=q'.</msg>
-<status status="PASS" starttime="20230418 07:58:55.264" endtime="20230418 07:58:55.334"/>
-</kw>
-<kw name="Press Keys" library="SeleniumLibrary">
-<arg>name=q</arg>
-<arg>ENTER</arg>
-<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
-<msg timestamp="20230418 07:58:55.335" level="INFO">Sending key(s) ('ENTER',) to name=q element.</msg>
-<msg timestamp="20230418 07:58:55.623" level="INFO">Pressing special key ENTER to element.</msg>
-<msg timestamp="20230418 07:58:55.623" level="INFO">Releasing special key ENTER.</msg>
-<status status="PASS" starttime="20230418 07:58:55.335" endtime="20230418 07:58:57.931"/>
-</kw>
-<status status="PASS" starttime="20230418 07:58:53.121" endtime="20230418 07:58:57.931"/>
-</kw>
-<kw name="Dene">
-<kw name="Set Variable" library="BuiltIn">
-<var>${aa}</var>
-<arg>Osman</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20230418 07:58:57.932" level="INFO">${aa} = Osman</msg>
-<status status="PASS" starttime="20230418 07:58:57.931" endtime="20230418 07:58:57.932"/>
-</kw>
-<kw name="Set Variable" library="BuiltIn">
-<var>${ExpectedLoggedInText}</var>
-<arg>Logged in as</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20230418 07:58:57.932" level="INFO">${ExpectedLoggedInText} = Logged in as</msg>
-<status status="PASS" starttime="20230418 07:58:57.932" endtime="20230418 07:58:57.932"/>
-</kw>
-<kw>
-<var>${ExpectedLoggedInText}</var>
-<var>${ExpectedLoggedInText}</var>
-<var>${aa}</var>
-<msg timestamp="20230418 07:58:57.932" level="FAIL">Keyword name cannot be empty.</msg>
-<status status="FAIL" starttime="20230418 07:58:57.932" endtime="20230418 07:58:57.932"/>
+<robot generator="Robot 6.0.1 (Python 3.11.0 on win32)" generated="20230418 10:04:21.291" rpa="false" schemaversion="3">
+<suite id="s1" name="Draw" source="C:\development\robot-scripts\UI_RobotLessons\AutomationExerciseTestCases\Draw.robot">
+<test id="s1-t1" name="Drawing" line="6">
+<kw name="Generate Random String" library="String">
+<var>${MobileNumber}</var>
+<arg>7</arg>
+<arg>123456789</arg>
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<msg timestamp="20230418 10:04:21.819" level="INFO">${MobileNumber} = 1696519</msg>
+<status status="PASS" starttime="20230418 10:04:21.818" endtime="20230418 10:04:21.820"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
-<arg>${ExpectedLoggedInText}</arg>
+<arg>+903422${MobileNumber}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="NOT RUN" starttime="20230418 07:58:57.932" endtime="20230418 07:58:57.933"/>
+<status status="PASS" starttime="20230418 10:04:21.821" endtime="20230418 10:04:21.821"/>
 </kw>
-<status status="FAIL" starttime="20230418 07:58:57.931" endtime="20230418 07:58:57.933"/>
+<for flavor="IN ENUMERATE">
+<var>${index}</var>
+<var>${element}</var>
+<value>A</value>
+<value>B</value>
+<value>C</value>
+<value>D</value>
+<iter>
+<var name="${index}">0</var>
+<var name="${element}">A</var>
+<if>
+<branch type="IF" condition="${index}== 0">
+<kw name="Log To Console" library="BuiltIn">
+<arg>${element}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230418 10:04:21.822" endtime="20230418 10:04:21.822"/>
 </kw>
-<status status="FAIL" starttime="20230418 07:58:42.042" endtime="20230418 07:58:57.933">Keyword name cannot be empty.</status>
+<status status="PASS" starttime="20230418 10:04:21.822" endtime="20230418 10:04:21.822"/>
+</branch>
+<status status="PASS" starttime="20230418 10:04:21.822" endtime="20230418 10:04:21.823"/>
+</if>
+<status status="PASS" starttime="20230418 10:04:21.822" endtime="20230418 10:04:21.823"/>
+</iter>
+<iter>
+<var name="${index}">1</var>
+<var name="${element}">B</var>
+<if>
+<branch type="IF" condition="${index}== 0">
+<kw name="Log To Console" library="BuiltIn">
+<arg>${element}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20230418 10:04:21.823" endtime="20230418 10:04:21.823"/>
+</kw>
+<status status="NOT RUN" starttime="20230418 10:04:21.823" endtime="20230418 10:04:21.823"/>
+</branch>
+<status status="PASS" starttime="20230418 10:04:21.823" endtime="20230418 10:04:21.823"/>
+</if>
+<status status="PASS" starttime="20230418 10:04:21.823" endtime="20230418 10:04:21.824"/>
+</iter>
+<iter>
+<var name="${index}">2</var>
+<var name="${element}">C</var>
+<if>
+<branch type="IF" condition="${index}== 0">
+<kw name="Log To Console" library="BuiltIn">
+<arg>${element}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20230418 10:04:21.824" endtime="20230418 10:04:21.824"/>
+</kw>
+<status status="NOT RUN" starttime="20230418 10:04:21.824" endtime="20230418 10:04:21.824"/>
+</branch>
+<status status="PASS" starttime="20230418 10:04:21.824" endtime="20230418 10:04:21.824"/>
+</if>
+<status status="PASS" starttime="20230418 10:04:21.824" endtime="20230418 10:04:21.824"/>
+</iter>
+<iter>
+<var name="${index}">3</var>
+<var name="${element}">D</var>
+<if>
+<branch type="IF" condition="${index}== 0">
+<kw name="Log To Console" library="BuiltIn">
+<arg>${element}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20230418 10:04:21.825" endtime="20230418 10:04:21.825"/>
+</kw>
+<status status="NOT RUN" starttime="20230418 10:04:21.825" endtime="20230418 10:04:21.825"/>
+</branch>
+<status status="PASS" starttime="20230418 10:04:21.825" endtime="20230418 10:04:21.825"/>
+</if>
+<status status="PASS" starttime="20230418 10:04:21.825" endtime="20230418 10:04:21.825"/>
+</iter>
+<status status="PASS" starttime="20230418 10:04:21.821" endtime="20230418 10:04:21.825"/>
+</for>
+<status status="PASS" starttime="20230418 10:04:21.818" endtime="20230418 10:04:21.825"/>
 </test>
-<status status="FAIL" starttime="20230418 07:58:41.320" endtime="20230418 07:58:57.934"/>
+<status status="PASS" starttime="20230418 10:04:21.294" endtime="20230418 10:04:21.826"/>
 </suite>
 <statistics>
 <total>
-<stat pass="0" fail="1" skip="0">All Tests</stat>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="0" fail="1" skip="0" id="s1" name="Samp">Samp</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="Draw">Draw</stat>
 </suite>
 </statistics>
 <errors>

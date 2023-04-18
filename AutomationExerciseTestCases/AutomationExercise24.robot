@@ -117,7 +117,10 @@ Verify Account created
     Input Text    state    Gaziantep
     Input Text    city    Körkun
     Input Text    zipcode    27000
-    Input Text    mobile_number    +905418585525
+    ${MobileNumber}  Generate Random String  7  123456789
+    Log To Console    +903422${MobileNumber}
+
+    Input Text    mobile_number    ${MobileNumber}
     #Press Key    mobile_number    ENTER
     #Scroll Element Into View    ${CreateAccountButton}
     #Execute Javascript    document.getElementsByTagName('button')[0].click
