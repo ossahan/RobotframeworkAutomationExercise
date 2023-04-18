@@ -8,7 +8,6 @@
 
 *** Settings ***
 Library   SeleniumLibrary
-Library    XML
 Library    Collections
 Variables    ..//PageObjects/AutomationExercise.py
 
