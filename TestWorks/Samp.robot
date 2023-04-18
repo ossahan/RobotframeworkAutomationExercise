@@ -12,12 +12,15 @@ ${resultLocator}    //*[@id="result-stats"]
 
 
 *** Test Cases ***
+
 Aa
-  Dene
+    TC1
+    Test
+    Dene
 
 *** Keywords ***
 TC1
-    Open Browser   ${url}    edge
+    Open Browser   ${url}    ff
     Maximize Browser Window
     Sleep    1
 

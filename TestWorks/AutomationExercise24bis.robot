@@ -23,13 +23,18 @@
 #22. Verify 'ACCOUNT DELETED!' and click 'Continue' button
 
 
+
+
 *** Settings ***
 Library         SeleniumLibrary
 Library         Collections
-Library         FakerLibrary
+
 Library         OperatingSystem
 Library         String
+Library         FakerLibrary
+
 Variables       ..//PageObjects/AutomationExercise.py
+
 
 
 *** Variables ***
@@ -42,7 +47,7 @@ Test Case 24: Download Invoice after purchase order
     Homepage should be visible
     After adding some products Cart Page should be visible
     Verify Account created
-    New
+
 
 
 *** Keywords ***
@@ -69,9 +74,10 @@ After adding some products Cart Page should be visible
     ${g}    Get Length    ${ClickableCartElements}
 
     ${os}    Create List
-    FOR    ${counter}    IN RANGE    0    1    1
+    FOR    ${counter}    IN RANGE    0    5    1
         ${randomNumber}    Random Int    1    33
         ${randomProduct}    Get From List    ${ClickableCartElements}    ${randomNumber}
+       # Scroll Element Into View     ${randomProduct}
         Click Element    ${randomProduct}
         Click Element    ${continueShopping}
         Append To List    ${os}    ${randomNumber}
@@ -86,13 +92,14 @@ After adding some products Cart Page should be visible
     Log To Console    ${os}
 
 Verify Account created
+
     Click Element    ${ProceedToCheckout}
     Click Element    ${RegisterLoginOnCheckoutPopup}
     #Click Element    ${RegisterLogin}
-    ${aa}    First Name Female
+    ${Name}    First Name Female
     ${ab}    Last Name
     ${b}    Email
-    Input Text    name    ${aa}
+    Input Text    name    ${Name}
     Input Text    ${SignupEmailBox}    ${b}
     Click Button    Signup
     Click Element    ${idGender}
@@ -102,7 +109,7 @@ Verify Account created
     Select From List By Index    months    1
     Select From List By Value    years    1980
 
-    Input Text    first_name    ${aa}
+    Input Text    first_name    ${Name}
     Input Text    last_name    ${ab}
     ${street}    Street Address
     Input Text    address1    ${street}
@@ -112,11 +119,12 @@ Verify Account created
     Input Text    zipcode    27000
     Input Text    mobile_number    +905418585525
     #Press Key    mobile_number    ENTER
-    Scroll Element Into View    ${CreateAccountButton}
+    #Scroll Element Into View    ${CreateAccountButton}
     #Execute Javascript    document.getElementsByTagName('button')[0].click
-    Execute Javascript    window.scrollTo(0, document.body.scrollHeight);
+    Execute Javascript    window.scrollTo(0, 1400);
     #Set Selenium Speed    100
     #Wait Until Element Is Enabled    ${CreateAccountButton}
+    ${Cr}  Log Location
     Click Button    ${CreateAccountButton}
 
     Wait Until Element Is Visible    ${AccountCreatedText}
@@ -126,9 +134,9 @@ Verify Account created
     Log To Console    ${ActualAccountCreatedText}
 
     Element Should Contain    ${AccountCreatedText}    ${expectedAccountCreatedText}
-
-New
     Click Element    ${ContinueButton}
+
+
     ${iframe1Statement}    Run Keyword And Return Status    Element Should Be Visible    ad_iframe
     IF    ${iframe1Statement}    Select Frame    ad_iframe
 
@@ -140,27 +148,71 @@ New
 
     ${iframeAd1Statement}    Run Keyword And Return Status
     ...    Element Should Be Visible
-    ...    xpath=//*[@id='dismiss-button']/div/svg
+    ...    ${dismissButton2}
     IF    ${iframeAd1Statement}
-        Click Element    xpath=//*[@id='dismiss-button']/div/svg
+        Click Element    ${dismissButton2}
     END
 
     ${iframeAd1Statement}    Run Keyword And Return Status
     ...    Element Should Be Visible
-    ...    xpath=//*[@id='dismiss-button']
+    ...    ${dismissButton}
     IF    ${iframeAd1Statement}
-        Click Element    xpath=//*[@id='dismiss-button']
+        Click Element    ${dismissButton}
     END
 
     Unselect Frame
 
     set selenium speed    1
-    ${ExpectedLoggedInText}    Catenate    Logged in as
+    #${ExpectedLoggedInText}    Catenate    Logged in as
 
-    ${ExpectedLoggedInText}    Catenate    ${ExpectedLoggedInText}    ${aa}
+    #${ExpectedLoggedInText}    Catenate    ${ExpectedLoggedInText}    ${aa}
     #Log To Console    ${ExpectedLoggedInText}
     ${actualLoggedInText}    Get Text    ${loggedInAsUsername}
     Log To Console    ${actualLoggedInText}
-    Element Should Contain    ${loggedInAsUsername}    ${ExpectedLoggedInText}
+    Element Should Contain    ${loggedInAsUsername}    Logged in as ${Name}
 
     Click Element    ${viewCart}
+    #Execute Javascript    window.scrollTo(0,1200);
+    Scroll Element Into View     ${proceedToCheckOut}
+    Click Element    ${proceedToCheckOut}
+    Scroll Element Into View    ${PlaceOrderButton}
+
+    ${additionalInformation}  Text  200
+    Input Text    ${OrderTextArea}  ${additionalInformation}
+    Execute Javascript    window.scrollTo(0,1200);
+
+    Click Element    ${PlaceOrderButton}
+    ${CardName}  Name
+    ${CardNumber}  Credit Card Number
+    ${CardCVC}  Credit Card Security Code
+    ${CardExpiration}  Credit Card Expire
+    Input Text    name=name_on_card    ${CardName}
+    Input Text    name=card_number    ${CardNumber}
+    Input Text    name=cvc    ${CardCVC}
+    Input Text    name=expiry_month    09
+    Input Text    name=expiry_year    2030
+
+
+    Click Element    id=submit
+    ${sh}  Get Text    ${PaymentSuccessAleert}
+    Log To Console    ${sh}
+
+
+    ${Succesfull}  Get Text   ${OrderSuccesfull}
+
+    Log To Console  ${Succesfull}
+    Element Should Contain    ${OrderSuccesfull}   ${Succesfull}
+    Click Element    ${DownloadInvoice}
+    Click Element    ${ContinueButton}
+    Click Element    ${DeleteAccount}
+    ${accountDeleted}  Get Text    ${AccountDeletedText}
+    Log To Console     ${accountDeleted}
+    Element Should Contain    ${AccountDeletedText}    ACCOUNT DELETED!
+
+
+
+
+
+
+
+
