@@ -17,3 +17,12 @@ registerButton="xpath://input[@id='register-button']"
 SignupTitleRadioBoxForMrs="(//*[@name='title'])[2]"
 
 
+#Vuoro.net
+StartDate="//*[contains(@name,'TimeIntervalStart$dateInput')]"
+EndDate="//*[contains(@name,'TimeIntervalEnd$dateInput')]"
+AikaVali="//*[@class='rbText'][contains(.,'Aikaväli')]"
+AsetaAikaVali="//*[@class='rbDecorated']"
+HaeVuorot="//*[@value='Hae vuorot']"
+CaptureLimitElement="id=ctl00_ContentPlaceHolder1_UCUsageChart1_Label1"
+
+

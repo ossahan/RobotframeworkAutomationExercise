@@ -1,6 +1,6 @@
 *** Settings ***
 Library  SeleniumLibrary
-Resource   ../Resources/P2302LoginKeywords.robot
+Resource   ../Resource/Keywords/P2302LoginKeywords.robot
 
 
 *** Variables ***

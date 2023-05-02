@@ -1,6 +1,6 @@
 *** Settings ***
 Library             SeleniumLibrary
-Resource            ../Resources/P1802_LoginResources.robot
+Resource            ../Resource/Keywords/P1802_LoginResources.robot
 
 Suite Setup         Open my browser
 #Suite Teardown    Close Browsers
