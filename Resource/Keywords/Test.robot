@@ -33,9 +33,6 @@ Test
 
      Log To Console     ${sekil}   no_newline=true
 
-
-
-
   END
   Log To Console   ${SPACE}
   ${satirSayisi}=  Evaluate    ${satirSayisi}-1

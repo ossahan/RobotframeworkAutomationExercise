@@ -1,0 +1,199 @@
+1684635344651	geckodriver	INFO	Listening on 127.0.0.1:63967
+1684635347709	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "63968" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\PC\\AppData\\Local\\Temp\\rust_mozprofilepLIh1w"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1684635348433	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+1684635348438	Marionette	INFO	Listening on port 63980
+Read port: 63980
+WebDriver BiDi listening on ws://127.0.0.1:63968
+1684635348722	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[ERROR glean_core] Error setting metrics feature config: Json(Error("EOF while parsing a value", line: 1, column: 0))
+DevTools listening on ws://127.0.0.1:63968/devtools/browser/8d35ec53-72f1-4d80-8bed-65a8fa0f9fe7
+console.error: Region.sys.mjs: "Error fetching region" (new Error("TIMEOUT", "resource://gre/modules/Region.sys.mjs", 762))
+console.error: Region.sys.mjs: "Failed to fetch region" (new Error("TIMEOUT", "resource://gre/modules/Region.sys.mjs", 414))
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://accounts.google.com."
+JavaScript warning: https://accounts.google.com/v3/signin/identifier?dsh=S-536020068%3A1684635352055059&continue=https%3A%2F%2Faccounts.google.com%2F&followup=https%3A%2F%2Faccounts.google.com%2F&ifkv=Af_xneFkOvFy67_R4fkJC9M3WqkykQZeP1RaGXGocxUjL_5lYo26IW7xKig7HNfL_b1ClKFAscp9&passive=1209600&flowName=GlifWebSignIn&flowEntry=ServiceLogin line 205 > injectedScript line 2 > eval line 5774 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://accounts.google.com."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://accounts.google.com."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://accounts.google.com."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://accounts.google.com."
+JavaScript warning: https://accounts.google.com/v3/signin/identifier?dsh=S-536020068%3A1684635396957097&continue=http%3A%2F%2Fsupport.google.com%2Faccounts%2Fanswer%2F7675428%3Fhl%3Dtr&ec=GAZAdQ&hl=tr&ifkv=Af_xneHVpBkD32L7kzdBAU8ZfAMbt_O2wetCnY0XK9d0TG8Mz5MZtS8i-eqvJlmBsI_9HEj-zEbAUg&passive=true&sjid=8368102046877235843-EU&flowName=GlifWebSignIn&flowEntry=ServiceLogin line 205 > injectedScript line 2 > eval line 6789 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://accounts.google.com/v3/signin/identifier?dsh=S-536020068%3A1684635396957097&continue=http%3A%2F%2Fsupport.google.com%2Faccounts%2Fanswer%2F7675428%3Fhl%3Dtr&ec=GAZAdQ&hl=tr&ifkv=Af_xneHVpBkD32L7kzdBAU8ZfAMbt_O2wetCnY0XK9d0TG8Mz5MZtS8i-eqvJlmBsI_9HEj-zEbAUg&passive=true&sjid=8368102046877235843-EU&flowName=GlifWebSignIn&flowEntry=ServiceLogin line 205 > injectedScript line 2 > eval line 6789 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://accounts.google.com."
+[Child 3400, Main Thread] WARNING: JSWindowActorChild::SendRawMessage (Conduits, ConduitClosed) not sent: !CanSend() || !mManager || !mManager->CanSend(): file /builds/worker/checkouts/gecko/dom/ipc/jsactor/JSWindowActorChild.cpp:57
+[Child 3400, Main Thread] WARNING: JSWindowActorChild::SendRawMessage (Conduits, ConduitClosed) not sent: !CanSend() || !mManager || !mManager->CanSend(): file /builds/worker/checkouts/gecko/dom/ipc/jsactor/JSWindowActorChild.cpp:57
+[Child 3400, Main Thread] WARNING: JSWindowActorChild::SendRawMessage (Conduits, ConduitClosed) not sent: !CanSend() || !mManager || !mManager->CanSend(): file /builds/worker/checkouts/gecko/dom/ipc/jsactor/JSWindowActorChild.cpp:57
+[Child 3400, Main Thread] WARNING: JSWindowActorChild::SendRawMessage (Conduits, ConduitClosed) not sent: !CanSend() || !mManager || !mManager->CanSend(): file /builds/worker/checkouts/gecko/dom/ipc/jsactor/JSWindowActorChild.cpp:57
+[Child 3400, Main Thread] WARNING: JSWindowActorChild::SendRawMessage (Conduits, ConduitClosed) not sent: !CanSend() || !mManager || !mManager->CanSend(): file /builds/worker/checkouts/gecko/dom/ipc/jsactor/JSWindowActorChild.cpp:57
+[Child 3400, Main Thread] WARNING: JSWindowActorChild::SendRawMessage (Conduits, ConduitClosed) not sent: !CanSend() || !mManager || !mManager->CanSend(): file /builds/worker/checkouts/gecko/dom/ipc/jsactor/JSWindowActorChild.cpp:57
+[Child 3400, Main Thread] WARNING: JSWindowActorChild::SendRawMessage (Conduits, ConduitClosed) not sent: !CanSend() || !mManager || !mManager->CanSend(): file /builds/worker/checkouts/gecko/dom/ipc/jsactor/JSWindowActorChild.cpp:57
+[Child 3400, Main Thread] WARNING: JSWindowActorChild::SendRawMessage (Conduits, ConduitClosed) not sent: !CanSend() || !mManager || !mManager->CanSend(): file /builds/worker/checkouts/gecko/dom/ipc/jsactor/JSWindowActorChild.cpp:57
+1684635433473	Marionette	INFO	Stopped listening on port 63980
+Dynamically enable window occlusion 1
+console.error: RemoteSecuritySettings.jsm: 
+  Failed to download attachment: TypeError: NetworkError: Network request failed
+console.error: RemoteSecuritySettings.jsm: 
+  Failed to download attachment: TypeError: NetworkError: Network request failed
+console.error: RemoteSecuritySettings.jsm: 
+  Failed to download attachment: TypeError: NetworkError: Network request failed
+console.error: RemoteSecuritySettings.jsm: 
+  Failed to download attachment: TypeError: NetworkError: Network request failed
+console.error: RemoteSecuritySettings.jsm: 
+  Failed to download attachment: TypeError: NetworkError: Network request failed
+console.error: RemoteSecuritySettings.jsm: 
+  Failed to download attachment: TypeError: NetworkError: Network request failed
+console.error: RemoteSecuritySettings.jsm: 
+  Failed to download attachment: TypeError: NetworkError: Network request failed
+console.error: RemoteSecuritySettings.jsm: 
+  Failed to download attachment: TypeError: NetworkError: Network request failed
+console.error: RemoteSecuritySettings.jsm: 
+  Failed to download attachment: TypeError: NetworkError: Network request failed
+console.error: RemoteSecuritySettings.jsm: 
+  Failed to download attachment: TypeError: NetworkError: Network request failed
+console.error: RemoteSecuritySettings.jsm: 
+  Failed to download attachment: TypeError: NetworkError: Network request failed
+console.error: RemoteSecuritySettings.jsm: 
+  Failed to download attachment: TypeError: NetworkError: Network request failed
+console.error: RemoteSecuritySettings.jsm: 
+  Failed to download attachment: TypeError: NetworkError: Network request failed
+console.error: RemoteSecuritySettings.jsm: 
+  Failed to download attachment: TypeError: NetworkError: Network request failed
+console.error: RemoteSecuritySettings.jsm: 
+  Failed to download attachment: TypeError: NetworkError: Network request failed
+console.error: RemoteSecuritySettings.jsm: 
+  Failed to download attachment: TypeError: NetworkError: Network request failed
+console.error: RemoteSecuritySettings.jsm: 
+  Failed to download attachment: TypeError: NetworkError: Network request failed
+console.error: RemoteSecuritySettings.jsm: 
+  Failed to download attachment: TypeError: NetworkError: Network request failed
+console.error: RemoteSecuritySettings.jsm: 
+  Failed to download attachment: TypeError: NetworkError: Network request failed
+console.error: RemoteSecuritySettings.jsm: 
+  Failed to download attachment: TypeError: NetworkError: Network request failed
+console.error: RemoteSecuritySettings.jsm: 
+  Failed to download attachment: TypeError: NetworkError: Network request failed
+console.error: RemoteSecuritySettings.jsm: 
+  Failed to download attachment: TypeError: NetworkError: Network request failed
+console.error: RemoteSecuritySettings.jsm: 
+  Failed to download attachment: TypeError: NetworkError: Network request failed
+console.error: RemoteSecuritySettings.jsm: 
+  Failed to download attachment: TypeError: NetworkError: Network request failed
+console.error: RemoteSecuritySettings.jsm: 
+  Failed to download attachment: TypeError: NetworkError: Network request failed
+console.error: RemoteSecuritySettings.jsm: 
+  Failed to download attachment: TypeError: NetworkError: Network request failed
+console.error: RemoteSecuritySettings.jsm: 
+  Failed to download attachment: TypeError: NetworkError: Network request failed
+console.error: RemoteSecuritySettings.jsm: 
+  Failed to download attachment: TypeError: NetworkError: Network request failed
+console.error: RemoteSecuritySettings.jsm: 
+  Failed to download attachment: TypeError: NetworkError: Network request failed
+console.error: RemoteSecuritySettings.jsm: 
+  Failed to download attachment: TypeError: NetworkError: Network request failed
+console.error: RemoteSecuritySettings.jsm: 
+  Failed to download attachment: TypeError: NetworkError: Network request failed
+console.error: RemoteSecuritySettings.jsm: 
+  Failed to download attachment: TypeError: NetworkError: Network request failed
+console.error: RemoteSecuritySettings.jsm: 
+  Failed to download attachment: TypeError: NetworkError: Network request failed
+console.error: RemoteSecuritySettings.jsm: 
+  Failed to download attachment: TypeError: NetworkError: Network request failed
+console.error: RemoteSecuritySettings.jsm: 
+  Failed to download attachment: TypeError: NetworkError: Network request failed
+console.error: RemoteSecuritySettings.jsm: 
+  Failed to download attachment: TypeError: NetworkError: Network request failed
+console.error: RemoteSecuritySettings.jsm: 
+  Failed to download attachment: TypeError: NetworkError: Network request failed
+console.error: RemoteSecuritySettings.jsm: 
+  Failed to download attachment: TypeError: NetworkError: Network request failed
+console.error: RemoteSecuritySettings.jsm: 
+  Failed to download attachment: TypeError: NetworkError: Network request failed
+console.error: RemoteSecuritySettings.jsm: 
+  Failed to download attachment: TypeError: NetworkError: Network request failed
+console.error: RemoteSecuritySettings.jsm: 
+  Failed to download attachment: TypeError: NetworkError: Network request failed
+console.error: RemoteSecuritySettings.jsm: 
+  Failed to download attachment: TypeError: NetworkError: Network request failed
+console.error: RemoteSecuritySettings.jsm: 
+  Failed to download attachment: TypeError: NetworkError: Network request failed
+console.error: RemoteSecuritySettings.jsm: 
+  Failed to download attachment: TypeError: NetworkError: Network request failed
+console.error: RemoteSecuritySettings.jsm: 
+  Failed to download attachment: TypeError: NetworkError: Network request failed
+console.error: RemoteSecuritySettings.jsm: 
+  Failed to download attachment: TypeError: NetworkError: Network request failed
+console.error: RemoteSecuritySettings.jsm: 
+  Failed to download attachment: TypeError: NetworkError: Network request failed
+console.error: RemoteSecuritySettings.jsm: 
+  Failed to download attachment: TypeError: NetworkError: Network request failed
+console.error: RemoteSecuritySettings.jsm: 
+  Failed to download attachment: TypeError: NetworkError: Network request failed
+console.error: RemoteSecuritySettings.jsm: 
+  Failed to download attachment: TypeError: NetworkError: Network request failed
+console.error: RemoteSecuritySettings.jsm: 
+  Failed to download attachment: TypeError: NetworkError: Network request failed
+console.error: RemoteSecuritySettings.jsm: 
+  Failed to download attachment: TypeError: NetworkError: Network request failed
+console.error: RemoteSecuritySettings.jsm: 
+  Failed to download attachment: TypeError: NetworkError: Network request failed
+console.error: RemoteSecuritySettings.jsm: 
+  Failed to download attachment: TypeError: NetworkError: Network request failed
+console.error: RemoteSecuritySettings.jsm: 
+  Failed to download attachment: TypeError: NetworkError: Network request failed
+console.error: RemoteSecuritySettings.jsm: 
+  Failed to download attachment: TypeError: NetworkError: Network request failed
+console.error: RemoteSecuritySettings.jsm: 
+  Failed to download attachment: TypeError: NetworkError: Network request failed
+console.error: RemoteSecuritySettings.jsm: 
+  Failed to download attachment: TypeError: NetworkError: Network request failed
+console.error: RemoteSecuritySettings.jsm: 
+  Failed to download attachment: TypeError: NetworkError: Network request failed
+console.error: RemoteSecuritySettings.jsm: 
+  Failed to download attachment: TypeError: NetworkError: Network request failed
+console.error: RemoteSecuritySettings.jsm: 
+  Failed to download attachment: TypeError: NetworkError: Network request failed
+console.error: RemoteSecuritySettings.jsm: 
+  Failed to download attachment: TypeError: NetworkError: Network request failed
+console.error: RemoteSecuritySettings.jsm: 
+  Failed to download attachment: TypeError: NetworkError: Network request failed
+console.error: RemoteSecuritySettings.jsm: 
+  Failed to download attachment: TypeError: NetworkError: Network request failed
+console.error: RemoteSecuritySettings.jsm: 
+  Failed to download attachment: TypeError: NetworkError: Network request failed
+console.error: RemoteSecuritySettings.jsm: 
+  Failed to download attachment: TypeError: NetworkError: Network request failed
+console.error: RemoteSecuritySettings.jsm: 
+  Failed to download attachment: TypeError: NetworkError: Network request failed
+console.error: RemoteSecuritySettings.jsm: 
+  Failed to download attachment: TypeError: NetworkError: Network request failed
+console.error: RemoteSecuritySettings.jsm: 
+  Failed to download attachment: TypeError: NetworkError: Network request failed
+console.error: RemoteSecuritySettings.jsm: 
+  Failed to download attachment: TypeError: NetworkError: Network request failed
+console.error: RemoteSecuritySettings.jsm: 
+  Failed to download attachment: TypeError: NetworkError: Network request failed
+console.error: RemoteSecuritySettings.jsm: 
+  Failed to download attachment: TypeError: NetworkError: Network request failed
+console.error: RemoteSecuritySettings.jsm: 
+  Failed to download attachment: TypeError: NetworkError: Network request failed
+console.error: RemoteSecuritySettings.jsm: 
+  Failed to download attachment: TypeError: NetworkError: Network request failed
+console.error: RemoteSecuritySettings.jsm: 
+  Failed to download attachment: TypeError: NetworkError: Network request failed
+console.error: RemoteSecuritySettings.jsm: 
+  Failed to download attachment: TypeError: NetworkError: Network request failed
+console.error: RemoteSecuritySettings.jsm: 
+  Failed to download attachment: TypeError: NetworkError: Network request failed
+console.error: RemoteSecuritySettings.jsm: 
+  Failed to download attachment: TypeError: NetworkError: Network request failed
+console.error: RemoteSecuritySettings.jsm: 
+  Failed to download attachment: TypeError: NetworkError: Network request failed
+console.error: RemoteSecuritySettings.jsm: 
+  Failed to download attachment: TypeError: NetworkError: Network request failed
+console.error: RemoteSecuritySettings.jsm: 
+  Failed to download attachment: TypeError: NetworkError: Network request failed
+console.error: RemoteSecuritySettings.jsm: 
+  Failed to download attachment: TypeError: NetworkError: Network request failed
+console.error: RemoteSecuritySettings.jsm: 
+  Failed to download attachment: TypeError: NetworkError: Network request failed
