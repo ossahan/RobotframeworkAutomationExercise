@@ -1,100 +1,135 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.0.1 (Python 3.11.0 on win32)" generated="20230606 02:55:34.283" rpa="false" schemaversion="3">
+<robot generator="Robot 6.0.1 (Python 3.11.0 on win32)" generated="20230608 14:07:11.629" rpa="false" schemaversion="3">
 <suite id="s1" name="Oikotie" source="C:\development\robot-scripts\UI_RobotLessons\Resource\Keywords\oikotie.robot">
-<test id="s1-t1" name="Oikotie" line="17">
+<test id="s1-t1" name="Oikotie" line="24">
 <kw name="Oikotie esittely">
+<arg>${url}</arg>
 <kw name="Open Browser" library="SeleniumLibrary">
 <arg>${url}</arg>
 <arg>chrome</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20230606 02:55:34.926" level="INFO">Opening browser 'chrome' to base url 'https://asunnot.oikotie.fi/myytavat-asunnot?pagination=1&amp;locations=%5B%5B64,6,%22Helsinki%22%5D%5D&amp;price%5Bmin%5D=100000&amp;price%5Bmax%5D=280000&amp;size%5Bmin%5D=90&amp;roomCount%5B%5D=4&amp;roomCount%5B%5D=5&amp;buildingType%5B%5D=2&amp;buildingType%5B%5D=64&amp;buildingType%5B%5D=4&amp;buildingType%5B%5D=8&amp;buildingType%5B%5D=32&amp;buildingType%5B%5D=128&amp;cardType=100'.</msg>
-<status status="PASS" starttime="20230606 02:55:34.926" endtime="20230606 02:55:38.216"/>
+<msg timestamp="20230608 14:07:12.249" level="INFO">Opening browser 'chrome' to base url 'https://asunnot.oikotie.fi/myytavat-asunnot?pagination=1&amp;locations=%5B%5B64,6,%22Helsinki%22%5D%5D&amp;price%5Bmin%5D=100000&amp;price%5Bmax%5D=280000&amp;size%5Bmin%5D=90&amp;roomCount%5B%5D=4&amp;roomCount%5B%5D=5&amp;buildingType%5B%5D=2&amp;buildingType%5B%5D=64&amp;buildingType%5B%5D=4&amp;buildingType%5B%5D=8&amp;buildingType%5B%5D=32&amp;buildingType%5B%5D=128&amp;cardType=100'.</msg>
+<status status="PASS" starttime="20230608 14:07:12.249" endtime="20230608 14:07:15.668"/>
+</kw>
+<kw name="Get Title" library="SeleniumLibrary">
+<var>${title}</var>
+<doc>Returns the title of the current page.</doc>
+<msg timestamp="20230608 14:07:15.673" level="INFO">${title} = Myytävät rivitalo-asunnot | Oikotie Asunnot</msg>
+<status status="PASS" starttime="20230608 14:07:15.668" endtime="20230608 14:07:15.673"/>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20230606 02:55:38.216" endtime="20230606 02:55:38.346"/>
+<status status="PASS" starttime="20230608 14:07:15.673" endtime="20230608 14:07:15.786"/>
 </kw>
 <kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
 <arg>5</arg>
 <doc>Sets the implicit wait value used by Selenium.</doc>
-<status status="PASS" starttime="20230606 02:55:38.346" endtime="20230606 02:55:38.348"/>
+<status status="PASS" starttime="20230608 14:07:15.786" endtime="20230608 14:07:15.788"/>
 </kw>
+<status status="PASS" starttime="20230608 14:07:12.249" endtime="20230608 14:07:15.788"/>
+</kw>
+<kw name="Handle iFrame">
+<arg>${frameLocation}</arg>
+<arg>${AcceptCookies}</arg>
 <kw name="Select Frame" library="SeleniumLibrary">
-<arg>id=sp_message_iframe_783479</arg>
+<arg>${frameLocation}</arg>
 <doc>Sets frame identified by ``locator`` as the current frame.</doc>
-<msg timestamp="20230606 02:55:38.348" level="INFO">Selecting frame 'id=sp_message_iframe_783479'.</msg>
-<status status="PASS" starttime="20230606 02:55:38.348" endtime="20230606 02:55:38.379"/>
+<msg timestamp="20230608 14:07:15.789" level="INFO">Selecting frame 'id=sp_message_iframe_783479'.</msg>
+<status status="PASS" starttime="20230608 14:07:15.789" endtime="20230608 14:07:15.847"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
-<arg>xpath=//*[text()='Hyväksy kaikki evästeet']</arg>
+<arg>${AcceptCookies}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230606 02:55:38.380" level="INFO">Clicking element 'xpath=//*[text()='Hyväksy kaikki evästeet']'.</msg>
-<status status="PASS" starttime="20230606 02:55:38.379" endtime="20230606 02:55:38.658"/>
+<msg timestamp="20230608 14:07:15.847" level="INFO">Clicking element 'xpath=//*[text()='Hyväksy kaikki evästeet']'.</msg>
+<status status="PASS" starttime="20230608 14:07:15.847" endtime="20230608 14:07:15.958"/>
 </kw>
 <kw name="Unselect Frame" library="SeleniumLibrary">
 <doc>Sets the main frame as the current frame.</doc>
-<status status="PASS" starttime="20230606 02:55:38.658" endtime="20230606 02:55:38.659"/>
+<status status="PASS" starttime="20230608 14:07:15.958" endtime="20230608 14:07:15.958"/>
 </kw>
-<kw name="Scroll Element Into View" library="SeleniumLibrary">
-<arg>xpath=(//span[@class='button__text'])[4]</arg>
-<doc>Scrolls the element identified by ``locator`` into view.</doc>
-<status status="PASS" starttime="20230606 02:55:38.659" endtime="20230606 02:55:38.970"/>
+<kw name="Set Variable" library="BuiltIn">
+<var>${EsittelyPageLink}</var>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230608 14:07:15.958" level="INFO">${EsittelyPageLink} = </msg>
+<status status="PASS" starttime="20230608 14:07:15.958" endtime="20230608 14:07:15.958"/>
 </kw>
-<kw name="Get Text" library="SeleniumLibrary">
-<var>${hae}</var>
-<arg>${haeKohteet}</arg>
-<doc>Returns the text value of the element identified by ``locator``.</doc>
-<msg timestamp="20230606 02:55:38.997" level="INFO">${hae} = HAE KOHTEET (24)</msg>
-<status status="PASS" starttime="20230606 02:55:38.970" endtime="20230606 02:55:38.998"/>
+<status status="PASS" starttime="20230608 14:07:15.788" endtime="20230608 14:07:15.958"/>
 </kw>
-<kw name="Get Substring" library="String">
-<var>${hae}</var>
-<arg>${hae}</arg>
-<arg>13</arg>
-<arg>-1</arg>
-<doc>Returns a substring from ``start`` index to ``end`` index.</doc>
-<msg timestamp="20230606 02:55:38.998" level="INFO">${hae} = 24</msg>
-<status status="PASS" starttime="20230606 02:55:38.998" endtime="20230606 02:55:38.998"/>
+<kw name=" Handle Excel document">
+<arg>${filePath}</arg>
+<arg>${SheetName}</arg>
+<arg>1</arg>
+<kw name="Open Excel Document" library="ExcelLibrary">
+<arg>${filePath}</arg>
+<arg>${DocId}</arg>
+<doc>Opens xlsx document file.</doc>
+<status status="PASS" starttime="20230608 14:07:15.958" endtime="20230608 14:07:15.974"/>
 </kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${hae}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20230606 02:55:38.998" endtime="20230606 02:55:38.999"/>
+<kw name="Get Sheet" library="ExcelLibrary">
+<arg>Sayfa1</arg>
+<doc>Returns a page from the current document.</doc>
+<status status="PASS" starttime="20230608 14:07:15.974" endtime="20230608 14:07:15.974"/>
 </kw>
+<kw name="Read Excel Cell" library="ExcelLibrary">
+<var>${column}</var>
+<arg>1</arg>
+<arg>1</arg>
+<doc>Returns content of a cell.</doc>
+<msg timestamp="20230608 14:07:15.974" level="INFO">${column} = 2</msg>
+<status status="PASS" starttime="20230608 14:07:15.974" endtime="20230608 14:07:15.974"/>
+</kw>
+<kw name="Get Time" library="BuiltIn">
+<var>${time}</var>
+<doc>Returns the given time in the requested format.</doc>
+<msg timestamp="20230608 14:07:15.974" level="INFO">${time} = 2023-06-08 14:07:15</msg>
+<status status="PASS" starttime="20230608 14:07:15.974" endtime="20230608 14:07:15.974"/>
+</kw>
+<kw name="Write Excel Cell" library="ExcelLibrary">
+<arg>1</arg>
+<arg>${column}</arg>
+<arg>${time}</arg>
+<doc>Writes value to the cell.</doc>
+<status status="PASS" starttime="20230608 14:07:15.974" endtime="20230608 14:07:15.974"/>
+</kw>
+<kw name="Close Current Excel Document" library="ExcelLibrary">
+<doc>Closes current document.</doc>
+<status status="PASS" starttime="20230608 14:07:15.974" endtime="20230608 14:07:15.974"/>
+</kw>
+<status status="PASS" starttime="20230608 14:07:15.958" endtime="20230608 14:07:15.974"/>
+</kw>
+<kw name="Find listings with &quot;ESITTELY&quot; time">
+<arg>${ElementsInEsittely}</arg>
 <kw name="Get WebElements" library="SeleniumLibrary">
 <var>@{elementLists}</var>
-<arg>${esittely}</arg>
+<arg>${ElementsInEsittely}</arg>
 <doc>Returns a list of WebElement objects matching the ``locator``.</doc>
-<msg timestamp="20230606 02:55:39.012" level="INFO">@{elementLists} = [ &lt;selenium.webdriver.remote.webelement.WebElement (session="77fc5ecbe91409ba20c4b25761d1ecd5", element="ECFFAFEA775E1CA25FDD06EEF6A13592_element_153")&gt; | &lt;selenium.webdriver.remote.webelement.WebElem...</msg>
-<status status="PASS" starttime="20230606 02:55:38.999" endtime="20230606 02:55:39.012"/>
+<msg timestamp="20230608 14:07:16.423" level="INFO">@{elementLists} = [ &lt;selenium.webdriver.remote.webelement.WebElement (session="0e1af209eb445c9a07a1745ff52e96d2", element="B6A9700F858F584E4B9FCF53A89E45E6_element_149")&gt; | &lt;selenium.webdriver.remote.webelement.WebElem...</msg>
+<status status="PASS" starttime="20230608 14:07:15.974" endtime="20230608 14:07:16.423"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
-<var>${rowNum}</var>
+<var>${index}</var>
 <arg>1</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20230606 02:55:39.012" level="INFO">${rowNum} = 1</msg>
-<status status="PASS" starttime="20230606 02:55:39.012" endtime="20230606 02:55:39.012"/>
-</kw>
-<kw name="Set Variable" library="BuiltIn">
-<var>${Num}</var>
-<arg>1</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20230606 02:55:39.013" level="INFO">${Num} = 1</msg>
-<status status="PASS" starttime="20230606 02:55:39.013" endtime="20230606 02:55:39.013"/>
+<msg timestamp="20230608 14:07:16.423" level="INFO">${index} = 1</msg>
+<status status="PASS" starttime="20230608 14:07:16.423" endtime="20230608 14:07:16.424"/>
 </kw>
 <for flavor="IN">
 <var>${element}</var>
 <value>@{elementLists}</value>
 <iter>
-<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="77fc5ecbe91409ba20c4b25761d1ecd5", element="ECFFAFEA775E1CA25FDD06EEF6A13592_element_153")&gt;</var>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="0e1af209eb445c9a07a1745ff52e96d2", element="B6A9700F858F584E4B9FCF53A89E45E6_element_149")&gt;</var>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>${element}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20230608 14:07:16.424" endtime="20230608 14:07:16.736"/>
+</kw>
 <kw name="Get Text" library="SeleniumLibrary">
 <var>${elementText}</var>
 <arg>${element}</arg>
 <doc>Returns the text value of the element identified by ``locator``.</doc>
-<msg timestamp="20230606 02:55:39.023" level="INFO">${elementText} = NOSTO
-ESITTELY: 11.6.
-HINTA MUUTTUNUT</msg>
-<status status="PASS" starttime="20230606 02:55:39.013" endtime="20230606 02:55:39.023"/>
+<msg timestamp="20230608 14:07:16.783" level="INFO">${elementText} = KOROSTUS
+ESITTELY: 11.6.</msg>
+<status status="PASS" starttime="20230608 14:07:16.736" endtime="20230608 14:07:16.783"/>
 </kw>
 <kw name="Run Keyword And Return Status" library="BuiltIn">
 <var>${present}</var>
@@ -106,290 +141,377 @@ HINTA MUUTTUNUT</msg>
 <arg>${elementText}</arg>
 <arg>ESITTELY</arg>
 <doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
-<status status="PASS" starttime="20230606 02:55:39.024" endtime="20230606 02:55:39.024"/>
+<status status="PASS" starttime="20230608 14:07:16.783" endtime="20230608 14:07:16.783"/>
 </kw>
-<msg timestamp="20230606 02:55:39.024" level="INFO">${present} = True</msg>
-<status status="PASS" starttime="20230606 02:55:39.023" endtime="20230606 02:55:39.024"/>
+<msg timestamp="20230608 14:07:16.783" level="INFO">${present} = True</msg>
+<status status="PASS" starttime="20230608 14:07:16.783" endtime="20230608 14:07:16.783"/>
 </kw>
 <if>
 <branch type="IF" condition="${present}">
 <kw name="Get Element Attribute" library="SeleniumLibrary">
-<var>${new}</var>
-<arg>xpath=/html/body/main/div[5]/listing-search/section[2]/div/div/div/search-result-cards-v2/div/div[${num}]/card-v2/card-v2-regular/a</arg>
+<var>${EsittelyPageLink}</var>
+<arg>xpath=/html/body/main/div[5]/listing-search/section[2]/div/div/div/search-result-cards-v2/div/div[${index}]/card-v2/card-v2-regular/a</arg>
 <arg>href</arg>
 <doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
-<msg timestamp="20230606 02:55:39.048" level="INFO">${new} = https://asunnot.oikotie.fi/myytavat-asunnot/helsinki/17176650</msg>
-<status status="PASS" starttime="20230606 02:55:39.025" endtime="20230606 02:55:39.048"/>
+<msg timestamp="20230608 14:07:16.861" level="INFO">${EsittelyPageLink} = https://asunnot.oikotie.fi/myytavat-asunnot/helsinki/17317460</msg>
+<status status="PASS" starttime="20230608 14:07:16.783" endtime="20230608 14:07:16.861"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
-<arg>${new}</arg>
+<arg>${EsittelyPageLink}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20230606 02:55:39.049" endtime="20230606 02:55:39.049"/>
+<status status="PASS" starttime="20230608 14:07:16.861" endtime="20230608 14:07:16.862"/>
 </kw>
-<kw name="Open Excel Document" library="ExcelLibrary">
-<arg>TestData/hello.xlsx</arg>
-<arg>1</arg>
-<doc>Opens xlsx document file.</doc>
-<status status="PASS" starttime="20230606 02:55:39.049" endtime="20230606 02:55:39.063"/>
-</kw>
-<kw name="Get Sheet" library="ExcelLibrary">
-<arg>Sayfa1</arg>
-<doc>Returns a page from the current document.</doc>
-<status status="PASS" starttime="20230606 02:55:39.063" endtime="20230606 02:55:39.063"/>
-</kw>
-<kw name="Write Excel Cell" library="ExcelLibrary">
-<arg>1</arg>
-<arg>${Num}</arg>
-<arg>${new}</arg>
-<doc>Writes value to the cell.</doc>
-<status status="PASS" starttime="20230606 02:55:39.064" endtime="20230606 02:55:39.064"/>
-</kw>
-<kw name="Read Excel Cell" library="ExcelLibrary">
-<var>${dsd}</var>
-<arg>1</arg>
-<arg>${Num}</arg>
-<doc>Returns content of a cell.</doc>
-<msg timestamp="20230606 02:55:39.064" level="INFO">${dsd} = https://asunnot.oikotie.fi/myytavat-asunnot/helsinki/17176650</msg>
-<status status="PASS" starttime="20230606 02:55:39.064" endtime="20230606 02:55:39.065"/>
-</kw>
-<kw name="Save Excel Document" library="ExcelLibrary">
-<arg>TestData/hello.xlsx</arg>
-<doc>Saves the current document to disk.</doc>
-<status status="PASS" starttime="20230606 02:55:39.065" endtime="20230606 02:55:39.075"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${dsd}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20230606 02:55:39.075" endtime="20230606 02:55:39.076"/>
-</kw>
-<status status="PASS" starttime="20230606 02:55:39.024" endtime="20230606 02:55:39.076"/>
-</branch>
-<status status="PASS" starttime="20230606 02:55:39.024" endtime="20230606 02:55:39.076"/>
-</if>
-<kw name="Remove String" library="String">
-<arg>${elementText}</arg>
-<doc>Removes all ``removables`` from the given ``string``.</doc>
-<status status="PASS" starttime="20230606 02:55:39.076" endtime="20230606 02:55:39.076"/>
-</kw>
-<kw name="Remove String" library="String">
-<arg>${new}</arg>
-<doc>Removes all ``removables`` from the given ``string``.</doc>
-<status status="PASS" starttime="20230606 02:55:39.077" endtime="20230606 02:55:39.077"/>
-</kw>
-<kw name="Evaluate" library="BuiltIn">
-<var>${Num}</var>
-<arg>+1</arg>
-<doc>Evaluates the given expression in Python and returns the result.</doc>
-<msg timestamp="20230606 02:55:39.077" level="INFO">${Num} = 1</msg>
-<status status="PASS" starttime="20230606 02:55:39.077" endtime="20230606 02:55:39.077"/>
-</kw>
-<status status="PASS" starttime="20230606 02:55:39.013" endtime="20230606 02:55:39.077"/>
-</iter>
-<iter>
-<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="77fc5ecbe91409ba20c4b25761d1ecd5", element="ECFFAFEA775E1CA25FDD06EEF6A13592_element_154")&gt;</var>
-<kw name="Get Text" library="SeleniumLibrary">
-<var>${elementText}</var>
-<arg>${element}</arg>
-<doc>Returns the text value of the element identified by ``locator``.</doc>
-<msg timestamp="20230606 02:55:39.095" level="INFO">${elementText} = TULOSSA MYYNTIIN</msg>
-<status status="PASS" starttime="20230606 02:55:39.078" endtime="20230606 02:55:39.095"/>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${EsittelyPageLink}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20230608 14:07:16.862" level="INFO">Opening url 'https://asunnot.oikotie.fi/myytavat-asunnot/helsinki/17317460'</msg>
+<status status="PASS" starttime="20230608 14:07:16.862" endtime="20230608 14:07:18.001"/>
 </kw>
 <kw name="Run Keyword And Return Status" library="BuiltIn">
 <var>${present}</var>
-<arg>Should Contain</arg>
-<arg>${elementText}</arg>
-<arg>ESITTELY</arg>
+<arg>Element Should Be Enabled</arg>
+<arg>id=sp_message_iframe_783479</arg>
 <doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
-<kw name="Should Contain" library="BuiltIn">
-<arg>${elementText}</arg>
-<arg>ESITTELY</arg>
-<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
-<msg timestamp="20230606 02:55:39.096" level="FAIL">'TULOSSA MYYNTIIN' does not contain 'ESITTELY'</msg>
-<status status="FAIL" starttime="20230606 02:55:39.096" endtime="20230606 02:55:39.096"/>
+<kw name="Element Should Be Enabled" library="SeleniumLibrary">
+<arg>id=sp_message_iframe_783479</arg>
+<doc>Verifies that element identified by ``locator`` is enabled.</doc>
+<msg timestamp="20230608 14:07:23.323" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-17.png"&gt;&lt;img src="selenium-screenshot-17.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20230608 14:07:23.323" level="FAIL">Element with locator 'id=sp_message_iframe_783479' not found.</msg>
+<status status="FAIL" starttime="20230608 14:07:18.002" endtime="20230608 14:07:23.323"/>
 </kw>
-<msg timestamp="20230606 02:55:39.096" level="INFO">${present} = False</msg>
-<status status="PASS" starttime="20230606 02:55:39.096" endtime="20230606 02:55:39.097"/>
+<msg timestamp="20230608 14:07:23.323" level="INFO">${present} = False</msg>
+<status status="PASS" starttime="20230608 14:07:18.001" endtime="20230608 14:07:23.323"/>
 </kw>
 <if>
 <branch type="IF" condition="${present}">
-<kw name="Get Element Attribute" library="SeleniumLibrary">
-<var>${new}</var>
-<arg>xpath=/html/body/main/div[5]/listing-search/section[2]/div/div/div/search-result-cards-v2/div/div[${num}]/card-v2/card-v2-regular/a</arg>
-<arg>href</arg>
-<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
-<status status="NOT RUN" starttime="20230606 02:55:39.097" endtime="20230606 02:55:39.097"/>
+<kw name="Select Frame" library="SeleniumLibrary">
+<arg>id=sp_message_iframe_783479</arg>
+<doc>Sets frame identified by ``locator`` as the current frame.</doc>
+<status status="NOT RUN" starttime="20230608 14:07:23.323" endtime="20230608 14:07:23.323"/>
 </kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${new}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="NOT RUN" starttime="20230606 02:55:39.097" endtime="20230606 02:55:39.097"/>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath=//*[text()='Hyväksy kaikki evästeet']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20230608 14:07:23.323" endtime="20230608 14:07:23.323"/>
 </kw>
+<kw name="Unselect Frame" library="SeleniumLibrary">
+<doc>Sets the main frame as the current frame.</doc>
+<status status="NOT RUN" starttime="20230608 14:07:23.323" endtime="20230608 14:07:23.323"/>
+</kw>
+<status status="NOT RUN" starttime="20230608 14:07:23.323" endtime="20230608 14:07:23.323"/>
+</branch>
+<status status="PASS" starttime="20230608 14:07:23.323" endtime="20230608 14:07:23.323"/>
+</if>
 <kw name="Open Excel Document" library="ExcelLibrary">
 <arg>TestData/hello.xlsx</arg>
-<arg>1</arg>
+<arg>2</arg>
 <doc>Opens xlsx document file.</doc>
-<status status="NOT RUN" starttime="20230606 02:55:39.097" endtime="20230606 02:55:39.098"/>
+<status status="PASS" starttime="20230608 14:07:23.323" endtime="20230608 14:07:23.323"/>
 </kw>
 <kw name="Get Sheet" library="ExcelLibrary">
 <arg>Sayfa1</arg>
 <doc>Returns a page from the current document.</doc>
-<status status="NOT RUN" starttime="20230606 02:55:39.098" endtime="20230606 02:55:39.098"/>
+<status status="PASS" starttime="20230608 14:07:23.323" endtime="20230608 14:07:23.323"/>
+</kw>
+<kw name="Read Excel Cell" library="ExcelLibrary">
+<var>${column}</var>
+<arg>1</arg>
+<arg>1</arg>
+<doc>Returns content of a cell.</doc>
+<msg timestamp="20230608 14:07:23.323" level="INFO">${column} = 2</msg>
+<status status="PASS" starttime="20230608 14:07:23.323" endtime="20230608 14:07:23.338"/>
 </kw>
 <kw name="Write Excel Cell" library="ExcelLibrary">
-<arg>1</arg>
-<arg>${Num}</arg>
-<arg>${new}</arg>
+<arg>${row}</arg>
+<arg>${column}</arg>
+<arg>${EsittelyPageLink}</arg>
 <doc>Writes value to the cell.</doc>
-<status status="NOT RUN" starttime="20230606 02:55:39.098" endtime="20230606 02:55:39.098"/>
+<status status="PASS" starttime="20230608 14:07:23.338" endtime="20230608 14:07:23.338"/>
 </kw>
 <kw name="Read Excel Cell" library="ExcelLibrary">
 <var>${dsd}</var>
-<arg>1</arg>
-<arg>${Num}</arg>
+<arg>${row}</arg>
+<arg>${column}</arg>
 <doc>Returns content of a cell.</doc>
-<status status="NOT RUN" starttime="20230606 02:55:39.098" endtime="20230606 02:55:39.098"/>
+<msg timestamp="20230608 14:07:23.338" level="INFO">${dsd} = https://asunnot.oikotie.fi/myytavat-asunnot/helsinki/17317460</msg>
+<status status="PASS" starttime="20230608 14:07:23.338" endtime="20230608 14:07:23.338"/>
 </kw>
 <kw name="Save Excel Document" library="ExcelLibrary">
 <arg>TestData/hello.xlsx</arg>
 <doc>Saves the current document to disk.</doc>
-<status status="NOT RUN" starttime="20230606 02:55:39.099" endtime="20230606 02:55:39.099"/>
+<status status="PASS" starttime="20230608 14:07:23.338" endtime="20230608 14:07:23.369"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>${dsd}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="NOT RUN" starttime="20230606 02:55:39.099" endtime="20230606 02:55:39.099"/>
+<status status="PASS" starttime="20230608 14:07:23.369" endtime="20230608 14:07:23.369"/>
 </kw>
-<status status="NOT RUN" starttime="20230606 02:55:39.097" endtime="20230606 02:55:39.099"/>
-</branch>
-<status status="PASS" starttime="20230606 02:55:39.097" endtime="20230606 02:55:39.099"/>
-</if>
-<kw name="Remove String" library="String">
-<arg>${elementText}</arg>
-<doc>Removes all ``removables`` from the given ``string``.</doc>
-<status status="PASS" starttime="20230606 02:55:39.099" endtime="20230606 02:55:39.099"/>
-</kw>
-<kw name="Remove String" library="String">
-<arg>${new}</arg>
-<doc>Removes all ``removables`` from the given ``string``.</doc>
-<status status="PASS" starttime="20230606 02:55:39.100" endtime="20230606 02:55:39.100"/>
-</kw>
-<kw name="Evaluate" library="BuiltIn">
-<var>${Num}</var>
-<arg>+1</arg>
-<doc>Evaluates the given expression in Python and returns the result.</doc>
-<msg timestamp="20230606 02:55:39.100" level="INFO">${Num} = 1</msg>
-<status status="PASS" starttime="20230606 02:55:39.100" endtime="20230606 02:55:39.100"/>
-</kw>
-<status status="PASS" starttime="20230606 02:55:39.078" endtime="20230606 02:55:39.100"/>
-</iter>
-<iter>
-<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="77fc5ecbe91409ba20c4b25761d1ecd5", element="ECFFAFEA775E1CA25FDD06EEF6A13592_element_155")&gt;</var>
-<kw name="Get Text" library="SeleniumLibrary">
-<var>${elementText}</var>
-<arg>${element}</arg>
-<doc>Returns the text value of the element identified by ``locator``.</doc>
-<msg timestamp="20230606 02:55:39.110" level="INFO">${elementText} = ESITTELY: TÄNÄÄN 18:00</msg>
-<status status="PASS" starttime="20230606 02:55:39.101" endtime="20230606 02:55:39.110"/>
-</kw>
-<kw name="Run Keyword And Return Status" library="BuiltIn">
-<var>${present}</var>
-<arg>Should Contain</arg>
-<arg>${elementText}</arg>
-<arg>ESITTELY</arg>
-<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
-<kw name="Should Contain" library="BuiltIn">
-<arg>${elementText}</arg>
-<arg>ESITTELY</arg>
-<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
-<status status="PASS" starttime="20230606 02:55:39.111" endtime="20230606 02:55:39.111"/>
-</kw>
-<msg timestamp="20230606 02:55:39.112" level="INFO">${present} = True</msg>
-<status status="PASS" starttime="20230606 02:55:39.111" endtime="20230606 02:55:39.112"/>
-</kw>
-<if>
-<branch type="IF" condition="${present}">
-<kw name="Get Element Attribute" library="SeleniumLibrary">
-<var>${new}</var>
-<arg>xpath=/html/body/main/div[5]/listing-search/section[2]/div/div/div/search-result-cards-v2/div/div[${num}]/card-v2/card-v2-regular/a</arg>
-<arg>href</arg>
-<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
-<msg timestamp="20230606 02:55:39.143" level="INFO">${new} = https://asunnot.oikotie.fi/myytavat-asunnot/helsinki/17176650</msg>
-<status status="PASS" starttime="20230606 02:55:39.112" endtime="20230606 02:55:39.143"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${new}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20230606 02:55:39.143" endtime="20230606 02:55:39.144"/>
-</kw>
-<kw name="Open Excel Document" library="ExcelLibrary">
-<arg>TestData/hello.xlsx</arg>
-<arg>1</arg>
-<doc>Opens xlsx document file.</doc>
-<msg timestamp="20230606 02:55:39.144" level="FAIL">SuchIdIsExistException: Document with such id 1 is opened.</msg>
-<status status="FAIL" starttime="20230606 02:55:39.144" endtime="20230606 02:55:39.145"/>
-</kw>
-<kw name="Get Sheet" library="ExcelLibrary">
-<arg>Sayfa1</arg>
-<doc>Returns a page from the current document.</doc>
-<status status="NOT RUN" starttime="20230606 02:55:39.145" endtime="20230606 02:55:39.146"/>
-</kw>
-<kw name="Write Excel Cell" library="ExcelLibrary">
-<arg>1</arg>
-<arg>${Num}</arg>
-<arg>${new}</arg>
-<doc>Writes value to the cell.</doc>
-<status status="NOT RUN" starttime="20230606 02:55:39.146" endtime="20230606 02:55:39.146"/>
-</kw>
-<kw name="Read Excel Cell" library="ExcelLibrary">
-<var>${dsd}</var>
-<arg>1</arg>
-<arg>${Num}</arg>
-<doc>Returns content of a cell.</doc>
-<status status="NOT RUN" starttime="20230606 02:55:39.146" endtime="20230606 02:55:39.146"/>
-</kw>
-<kw name="Save Excel Document" library="ExcelLibrary">
-<arg>TestData/hello.xlsx</arg>
-<doc>Saves the current document to disk.</doc>
-<status status="NOT RUN" starttime="20230606 02:55:39.146" endtime="20230606 02:55:39.147"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${dsd}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="NOT RUN" starttime="20230606 02:55:39.147" endtime="20230606 02:55:39.147"/>
-</kw>
-<status status="FAIL" starttime="20230606 02:55:39.112" endtime="20230606 02:55:39.147"/>
-</branch>
-<status status="FAIL" starttime="20230606 02:55:39.112" endtime="20230606 02:55:39.148"/>
-</if>
-<kw name="Remove String" library="String">
-<arg>${elementText}</arg>
-<doc>Removes all ``removables`` from the given ``string``.</doc>
-<status status="NOT RUN" starttime="20230606 02:55:39.148" endtime="20230606 02:55:39.148"/>
-</kw>
-<kw name="Remove String" library="String">
-<arg>${new}</arg>
-<doc>Removes all ``removables`` from the given ``string``.</doc>
-<status status="NOT RUN" starttime="20230606 02:55:39.148" endtime="20230606 02:55:39.148"/>
-</kw>
-<kw name="Evaluate" library="BuiltIn">
-<var>${Num}</var>
-<arg>+1</arg>
-<doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="NOT RUN" starttime="20230606 02:55:39.148" endtime="20230606 02:55:39.148"/>
-</kw>
-<status status="FAIL" starttime="20230606 02:55:39.101" endtime="20230606 02:55:39.148"/>
-</iter>
-<status status="FAIL" starttime="20230606 02:55:39.013" endtime="20230606 02:55:39.148"/>
-</for>
 <kw name="Close Current Excel Document" library="ExcelLibrary">
 <doc>Closes current document.</doc>
-<status status="NOT RUN" starttime="20230606 02:55:39.149" endtime="20230606 02:55:39.149"/>
+<status status="PASS" starttime="20230608 14:07:23.369" endtime="20230608 14:07:23.369"/>
 </kw>
-<status status="FAIL" starttime="20230606 02:55:34.925" endtime="20230606 02:55:39.149"/>
+<kw name="Switch Browser" library="SeleniumLibrary">
+<arg>1</arg>
+<doc>Switches between active browsers using ``index_or_alias``.</doc>
+<status status="PASS" starttime="20230608 14:07:23.369" endtime="20230608 14:07:23.369"/>
 </kw>
-<status status="FAIL" starttime="20230606 02:55:34.925" endtime="20230606 02:55:39.149">SuchIdIsExistException: Document with such id 1 is opened.</status>
+<status status="PASS" starttime="20230608 14:07:16.783" endtime="20230608 14:07:23.369"/>
+</branch>
+<status status="PASS" starttime="20230608 14:07:16.783" endtime="20230608 14:07:23.369"/>
+</if>
+<kw name="Evaluate" library="BuiltIn">
+<var>${row}</var>
+<arg>${row}+1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20230608 14:07:23.369" level="INFO">${row} = 3</msg>
+<status status="PASS" starttime="20230608 14:07:23.369" endtime="20230608 14:07:23.369"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${index}</var>
+<arg>${index}+1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20230608 14:07:23.369" level="INFO">${index} = 2</msg>
+<status status="PASS" starttime="20230608 14:07:23.369" endtime="20230608 14:07:23.369"/>
+</kw>
+<status status="PASS" starttime="20230608 14:07:16.424" endtime="20230608 14:07:23.369"/>
+</iter>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="0e1af209eb445c9a07a1745ff52e96d2", element="B6A9700F858F584E4B9FCF53A89E45E6_element_150")&gt;</var>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>${element}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<msg timestamp="20230608 14:07:23.653" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-18.png"&gt;&lt;img src="selenium-screenshot-18.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20230608 14:07:23.653" level="FAIL">StaleElementReferenceException: Message: stale element reference: stale element not found
+  (Session info: chrome=114.0.5735.110)
+Stacktrace:
+Backtrace:
+	GetHandleVerifier [0x0023A813+48355]
+	(No symbol) [0x001CC4B1]
+	(No symbol) [0x000D5358]
+	(No symbol) [0x000DE5A3]
+	(No symbol) [0x000D8A78]
+	(No symbol) [0x000D7C03]
+	(No symbol) [0x000D99E1]
+	(No symbol) [0x000D9A80]
+	(No symbol) [0x0010499F]
+	(No symbol) [0x001042A3]
+	(No symbol) [0x001326D2]
+	(No symbol) [0x0011A73C]
+	(No symbol) [0x0012C922]
+	(No symbol) [0x0011A536]
+	(No symbol) [0x000F82DC]
+	(No symbol) [0x000F93DD]
+	GetHandleVerifier [0x0049AABD+2539405]
+	GetHandleVerifier [0x004DA78F+2800735]
+	GetHandleVerifier [0x004D456C+2775612]
+	GetHandleVerifier [0x002C51E0+616112]
+	(No symbol) [0x001D5F8C]
+	(No symbol) [0x001D2328]
+	(No symbol) [0x001D240B]
+	(No symbol) [0x001C4FF7]
+	BaseThreadInitThunk [0x75B600C9+25]
+	RtlGetAppContainerNamedObjectPath [0x77C67B4E+286]
+	RtlGetAppContainerNamedObjectPath [0x77C67B1E+238]
+	(No symbol) [0x00000000]
+</msg>
+<status status="FAIL" starttime="20230608 14:07:23.369" endtime="20230608 14:07:23.684"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${elementText}</var>
+<arg>${element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20230608 14:07:23.684" endtime="20230608 14:07:23.684"/>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${present}</var>
+<arg>Should Contain</arg>
+<arg>${elementText}</arg>
+<arg>ESITTELY</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="NOT RUN" starttime="20230608 14:07:23.684" endtime="20230608 14:07:23.684"/>
+</kw>
+<if>
+<branch type="IF" condition="${present}">
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<var>${EsittelyPageLink}</var>
+<arg>xpath=/html/body/main/div[5]/listing-search/section[2]/div/div/div/search-result-cards-v2/div/div[${index}]/card-v2/card-v2-regular/a</arg>
+<arg>href</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="NOT RUN" starttime="20230608 14:07:23.684" endtime="20230608 14:07:23.684"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${EsittelyPageLink}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20230608 14:07:23.684" endtime="20230608 14:07:23.684"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${EsittelyPageLink}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="NOT RUN" starttime="20230608 14:07:23.684" endtime="20230608 14:07:23.684"/>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${present}</var>
+<arg>Element Should Be Enabled</arg>
+<arg>id=sp_message_iframe_783479</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="NOT RUN" starttime="20230608 14:07:23.684" endtime="20230608 14:07:23.684"/>
+</kw>
+<if>
+<branch type="IF" condition="${present}">
+<kw name="Select Frame" library="SeleniumLibrary">
+<arg>id=sp_message_iframe_783479</arg>
+<doc>Sets frame identified by ``locator`` as the current frame.</doc>
+<status status="NOT RUN" starttime="20230608 14:07:23.684" endtime="20230608 14:07:23.684"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath=//*[text()='Hyväksy kaikki evästeet']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20230608 14:07:23.684" endtime="20230608 14:07:23.684"/>
+</kw>
+<kw name="Unselect Frame" library="SeleniumLibrary">
+<doc>Sets the main frame as the current frame.</doc>
+<status status="NOT RUN" starttime="20230608 14:07:23.684" endtime="20230608 14:07:23.684"/>
+</kw>
+<status status="NOT RUN" starttime="20230608 14:07:23.684" endtime="20230608 14:07:23.684"/>
+</branch>
+<status status="NOT RUN" starttime="20230608 14:07:23.684" endtime="20230608 14:07:23.684"/>
+</if>
+<kw name="Open Excel Document" library="ExcelLibrary">
+<arg>TestData/hello.xlsx</arg>
+<arg>2</arg>
+<doc>Opens xlsx document file.</doc>
+<status status="NOT RUN" starttime="20230608 14:07:23.684" endtime="20230608 14:07:23.684"/>
+</kw>
+<kw name="Get Sheet" library="ExcelLibrary">
+<arg>Sayfa1</arg>
+<doc>Returns a page from the current document.</doc>
+<status status="NOT RUN" starttime="20230608 14:07:23.684" endtime="20230608 14:07:23.684"/>
+</kw>
+<kw name="Read Excel Cell" library="ExcelLibrary">
+<var>${column}</var>
+<arg>1</arg>
+<arg>1</arg>
+<doc>Returns content of a cell.</doc>
+<status status="NOT RUN" starttime="20230608 14:07:23.684" endtime="20230608 14:07:23.684"/>
+</kw>
+<kw name="Write Excel Cell" library="ExcelLibrary">
+<arg>${row}</arg>
+<arg>${column}</arg>
+<arg>${EsittelyPageLink}</arg>
+<doc>Writes value to the cell.</doc>
+<status status="NOT RUN" starttime="20230608 14:07:23.684" endtime="20230608 14:07:23.684"/>
+</kw>
+<kw name="Read Excel Cell" library="ExcelLibrary">
+<var>${dsd}</var>
+<arg>${row}</arg>
+<arg>${column}</arg>
+<doc>Returns content of a cell.</doc>
+<status status="NOT RUN" starttime="20230608 14:07:23.684" endtime="20230608 14:07:23.684"/>
+</kw>
+<kw name="Save Excel Document" library="ExcelLibrary">
+<arg>TestData/hello.xlsx</arg>
+<doc>Saves the current document to disk.</doc>
+<status status="NOT RUN" starttime="20230608 14:07:23.684" endtime="20230608 14:07:23.684"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${dsd}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20230608 14:07:23.684" endtime="20230608 14:07:23.684"/>
+</kw>
+<kw name="Close Current Excel Document" library="ExcelLibrary">
+<doc>Closes current document.</doc>
+<status status="NOT RUN" starttime="20230608 14:07:23.684" endtime="20230608 14:07:23.684"/>
+</kw>
+<kw name="Switch Browser" library="SeleniumLibrary">
+<arg>1</arg>
+<doc>Switches between active browsers using ``index_or_alias``.</doc>
+<status status="NOT RUN" starttime="20230608 14:07:23.684" endtime="20230608 14:07:23.684"/>
+</kw>
+<status status="NOT RUN" starttime="20230608 14:07:23.684" endtime="20230608 14:07:23.684"/>
+</branch>
+<status status="NOT RUN" starttime="20230608 14:07:23.684" endtime="20230608 14:07:23.684"/>
+</if>
+<kw name="Evaluate" library="BuiltIn">
+<var>${row}</var>
+<arg>${row}+1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" starttime="20230608 14:07:23.684" endtime="20230608 14:07:23.684"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${index}</var>
+<arg>${index}+1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" starttime="20230608 14:07:23.684" endtime="20230608 14:07:23.684"/>
+</kw>
+<status status="FAIL" starttime="20230608 14:07:23.369" endtime="20230608 14:07:23.684"/>
+</iter>
+<status status="FAIL" starttime="20230608 14:07:16.424" endtime="20230608 14:07:23.684"/>
+</for>
+<kw name="Evaluate" library="BuiltIn">
+<var>${column}</var>
+<arg>${column}+1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" starttime="20230608 14:07:23.684" endtime="20230608 14:07:23.684"/>
+</kw>
+<kw name="Open Excel Document" library="ExcelLibrary">
+<arg>TestData/hello.xlsx</arg>
+<arg>3</arg>
+<doc>Opens xlsx document file.</doc>
+<status status="NOT RUN" starttime="20230608 14:07:23.684" endtime="20230608 14:07:23.684"/>
+</kw>
+<kw name="Get Sheet" library="ExcelLibrary">
+<arg>Sayfa1</arg>
+<doc>Returns a page from the current document.</doc>
+<status status="NOT RUN" starttime="20230608 14:07:23.684" endtime="20230608 14:07:23.684"/>
+</kw>
+<kw name="Write Excel Cell" library="ExcelLibrary">
+<arg>1</arg>
+<arg>1</arg>
+<arg>${column}</arg>
+<doc>Writes value to the cell.</doc>
+<status status="NOT RUN" starttime="20230608 14:07:23.684" endtime="20230608 14:07:23.684"/>
+</kw>
+<kw name="Close Current Excel Document" library="ExcelLibrary">
+<doc>Closes current document.</doc>
+<status status="NOT RUN" starttime="20230608 14:07:23.684" endtime="20230608 14:07:23.684"/>
+</kw>
+<status status="FAIL" starttime="20230608 14:07:15.974" endtime="20230608 14:07:23.684"/>
+</kw>
+<status status="FAIL" starttime="20230608 14:07:12.249" endtime="20230608 14:07:23.684">StaleElementReferenceException: Message: stale element reference: stale element not found
+  (Session info: chrome=114.0.5735.110)
+Stacktrace:
+Backtrace:
+	GetHandleVerifier [0x0023A813+48355]
+	(No symbol) [0x001CC4B1]
+	(No symbol) [0x000D5358]
+	(No symbol) [0x000DE5A3]
+	(No symbol) [0x000D8A78]
+	(No symbol) [0x000D7C03]
+	(No symbol) [0x000D99E1]
+	(No symbol) [0x000D9A80]
+	(No symbol) [0x0010499F]
+	(No symbol) [0x001042A3]
+	(No symbol) [0x001326D2]
+	(No symbol) [0x0011A73C]
+	(No symbol) [0x0012C922]
+	(No symbol) [0x0011A536]
+	(No symbol) [0x000F82DC]
+	(No symbol) [0x000F93DD]
+	GetHandleVerifier [0x0049AABD+2539405]
+	GetHandleVerifier [0x004DA78F+2800735]
+	GetHandleVerifier [0x004D456C+2775612]
+	GetHandleVerifier [0x002C51E0+616112]
+	(No symbol) [0x001D5F8C]
+	(No symbol) [0x001D2328]
+	(No symbol) [0x001D240B]
+	(No symbol) [0x001C4FF7]
+	BaseThreadInitThunk [0x75B600C9+25]
+	RtlGetAppContainerNamedObjectPath [0x77C67B4E+286]
+	RtlGetAppContainerNamedObjectPath [0x77C67B1E+238]
+	(No symbol) [0x00000000]
+</status>
 </test>
-<status status="FAIL" starttime="20230606 02:55:34.285" endtime="20230606 02:55:39.150"/>
+<status status="FAIL" starttime="20230608 14:07:11.629" endtime="20230608 14:07:23.684"/>
 </suite>
 <statistics>
 <total>
